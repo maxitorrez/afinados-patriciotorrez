@@ -1,0 +1,1327 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body{
+    background-color: #37363d;
+}
+
+@media screen and (min-width: 769px){
+    
+/*HEADER + NAV*/
+header{
+    background-color: #37363d;
+    height:100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav{
+    width: 40vw;
+}
+
+#ulnav{
+    font-family: 'Montserrat', sans-serif;
+    list-style-type: none;
+    color: #F8E0BC;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 30px 0 0 ;
+    padding: 0;    
+}
+
+.linav{
+    display: flex;
+    text-decoration: none;
+}
+
+.linknav{
+    color: #F8E0BC;
+}
+
+.imgLogo{
+    height: 8vh;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 0 30px;
+}
+
+/*MAIN*/
+main{
+    background-color:  #221E24
+}
+
+/*INDEX*/
+
+#gridIndex{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 50% 50%;
+    grid-template-rows:700px 400px;
+    grid-template-areas: "banner banner"
+                         "foto texto";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+}
+
+.backgroundIndex{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/banerindex.jpg) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.fotoIndex{
+    grid-area: foto;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: 50%;
+
+}
+
+.textoIndex{
+    color: cornsilk;
+    grid-area: texto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    display: flex;
+    align-self: center;
+    justify-items: start;
+    padding: 50px;
+}
+
+/*QUIENSOY*/
+#gridQuiensoy{ 
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24 ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:400px 400px 400px;
+    grid-template-areas:"titulo titulo titulo" 
+                        "fotoquiensoy texto texto"
+                         "foto1 foto2 foto3";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.tituloQuienSoy{
+    grid-area: titulo ;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.fotoQuienSoy{
+    grid-area: fotoquiensoy;
+    display: flex;
+    justify-self: center;
+    align-self:  center;
+    width: 80%;
+    padding: 20px;
+    background-color: #D15D46;
+}
+
+.textoQuienSoy{
+    grid-area: texto;
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    padding: 20px;
+    background-color: #D15D46;
+}
+
+.foto1{
+    grid-area: foto1 ;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 70% ;
+}
+
+.foto2{
+    grid-area: foto2;
+    display: flex;
+    justify-self: center;
+    align-self: center ;
+    width: 70% ;
+}
+
+.foto3{
+    grid-area: foto3;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 70% ;
+}
+
+
+
+/*CLASES*/
+
+#gridClases{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:700px 400px;
+    grid-template-areas: "banner banner banner"
+                         "nivel1 nivel2 nivel3";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.backgroundClases{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/bannerclases.jpg) ;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.nivel1{
+    grid-area: nivel1;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding: 50px; 
+    margin: 50px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.nivel2{
+    grid-area: nivel2;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding: 50px; 
+    margin:50px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.nivel3{
+    grid-area: nivel3;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding: 50px; 
+    margin:50px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+/*
+#divPadre{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 350px;
+}
+
+.divHijo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px; 
+    margin:20px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+*/
+.texto{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px; 
+}
+/*INSTRUMENTOS*/
+
+#gridInstrumentos{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 50fr 50fr ;
+    grid-template-rows:700px 400px;
+    grid-template-areas: "banner banner "
+                         "cuerdas canto";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+    
+}
+.backgroundInstrumentos{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/bannerinstrumentos.jpg) ;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+ 
+.cuerdas{
+    grid-area: cuerdas;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px; 
+    margin:50px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.canto{
+    grid-area: canto ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px; 
+    margin:50px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+/*
+
+
+/*CONTACTO*/
+
+#gridContacto {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 50fr 50fr ;
+    grid-template-rows:700px 500px;
+    grid-template-areas: "banner banner "
+                         "mapa formulario";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+}    
+
+
+.backgroundContacto{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/bannercontacto.jpg) ;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.mapa{
+    grid-area: mapa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px; 
+    margin:50px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.formulario{
+    
+    grid-area: formulario;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    align-items: center;
+    padding: 50px; 
+    margin:50px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+
+#whatsapp{
+    position: fixed;
+    right: 30px;
+    bottom: 150px;
+    height: 50px;
+    width: 50px;
+}
+
+/*FUENTES*/
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    color: #D15D46;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+h3{
+    color: #F8E0BC;
+    padding-left: 100px;
+    font-family: 'Montserrat', sans-serif;  
+}
+
+.texto{
+    color: #F8E0BC;
+    padding-left: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px; 
+    line-height: 1.5;
+}
+
+
+
+/*FOOTER*/
+footer {
+    background-color: #37363d;
+    height: 140px;
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+} 
+
+#div1footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+ 
+.afooter{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+}
+
+#div2footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 30px;
+    line-height: 2;
+    font-family: 'Montserrat', sans-serif;
+    color: #F8E0BC; 
+    font-size: 15px
+}
+}
+
+/*TABLETS*/
+@media screen and (min-width: 600px) and (max-width: 768px) {
+
+/*HEADER + NAV*/
+header{
+    background-color: #221E24;
+    height: 170px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+nav{
+    width: 40vw;
+}
+
+#ulnav{
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+    
+    color: #F8E0BC;
+    height: 8vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+ 
+}
+
+.linav{
+    display: flex;
+    text-decoration: none;
+}
+
+.linknav{
+    color: #F8E0BC;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.imgLogo{
+    height: 8vh;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 0 30px;
+}
+
+/*MAIN*/
+main{
+    background-color:  #221E24
+}
+
+/*INDEX*/
+
+#gridIndex{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 100%;
+    grid-template-rows:300px 200px 100px;
+    grid-template-areas: "banner"
+                         "foto"
+                         "texto";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+}
+
+.backgroundIndex{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/banerindex.jpg) ;
+    justify-content: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.fotoIndex{
+    grid-area: foto;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: 80%;
+
+}
+
+.textoIndex{
+    color: cornsilk;
+    font-family: 'Montserrat', sans-serif;
+    grid-area: texto;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-self: center;
+    justify-items: center;
+    padding: 50px;
+}
+
+/*QUIENSOY*/
+
+
+#gridQuiensoy{ 
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24 ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-areas:"titulo titulo titulo" 
+                        "fotoquiensoy texto texto"
+                         "foto1 foto2 foto3";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.tituloQuienSoy{
+    grid-area: titulo ;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.fotoQuienSoy{
+    grid-area: fotoquiensoy;
+    display: flex;
+    justify-self: center;
+    align-self:  center;
+    width: 80%;
+    padding: 20px;
+    background-color: #D15D46;
+}
+
+.textoQuienSoy{
+    grid-area: texto;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    padding: 20px;
+    background-color: #D15D46;
+}
+
+.foto1{
+    grid-area: foto1 ;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 70% ;
+}
+
+.foto2{
+    grid-area: foto2;
+    display: flex;
+    justify-self: center;
+    align-self: center ;
+    width: 70% ;
+}
+
+.foto3{
+    grid-area: foto3;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 70% ;
+}
+
+
+
+
+
+/*CLASES*/
+
+#gridClases{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:300px 200px;
+    grid-template-areas: "banner banner banner"
+                         "nivel1 nivel2 nivel3";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.backgroundClases{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/bannerclases.jpg) ;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.nivel1{
+    grid-area: nivel1;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    margin: 30px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.nivel2{
+    grid-area: nivel2;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    margin:30px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.nivel3{
+    grid-area: nivel3;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    margin:30px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+/*INSTRUMENTOS*/
+
+
+#gridInstrumentos{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 50fr 50fr ;
+    grid-template-rows:300px 200px;
+    grid-template-areas: "banner banner "
+                         "cuerdas canto";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+    
+}
+.backgroundInstrumentos{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/bannerinstrumentos.jpg) ;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+ 
+.cuerdas{
+    grid-area: cuerdas;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; 
+    margin:20px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.canto{
+    grid-area: canto ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; 
+    margin:20px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+/*CONTACTO*/
+
+#gridContacto {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows:350px 350px;
+    grid-template-areas: "banner banner "
+                         "mapa formulario";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+}    
+
+
+.backgroundContacto{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/bannercontacto.jpg) ;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.mapa{
+    grid-area: mapa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; 
+    margin:10px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.formulario{
+    
+    grid-area: formulario;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    align-items: center;
+    padding: 30px; 
+    margin:20px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+
+#whatsapp{
+    position: fixed;
+    right: 30px;
+    bottom: 150px;
+    height: 50px;
+    width: 50px;
+}
+
+/*FUENTES*/
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    color: #D15D46;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.texto{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px; 
+}
+
+
+
+/*FOOTER*/
+footer {
+    background-color: #37363d;
+    height: 180px;
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    justify-content: space-between;
+} 
+
+#div1footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+ 
+.afooter{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+}
+
+#div2footer{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-self: center;
+    margin-right: 30px;
+    line-height: 2;
+    font-family: 'Montserrat', sans-serif;
+    color: #F8E0BC; 
+    font-size: 15px
+}
+}
+
+/*MOBILE*/
+@media screen and (min-width: 0px) and (max-width: 599px) {
+    /*HEADER + NAV*/
+header{
+    background-color: #221E24;
+    height: 170px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+nav{
+    width: 40vw;
+}
+
+#ulnav{
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+    
+    color: #F8E0BC;
+    height: 8vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+ 
+}
+
+.linav{
+    display: flex;
+    text-decoration: none;
+}
+
+.linknav{
+    color: #F8E0BC;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.imgLogo{
+    height: 8vh;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 0 30px;
+}
+
+/*MAIN*/
+main{
+    background-color:  #221E24
+}
+
+/*INDEX*/
+
+#gridIndex{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 100%;
+    grid-template-rows:300px 300px 50px;
+    grid-template-areas: "banner"
+                         "foto"
+                         "texto";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+}
+
+.backgroundIndex{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/banerindex.jpg) ;
+    justify-content: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.fotoIndex{
+    grid-area: foto;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: 80%;
+
+}
+
+.textoIndex{
+    color: cornsilk;
+    font-family: 'Montserrat', sans-serif;
+
+    grid-area: texto;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-self: center;
+    justify-items: center;
+    padding: 50px;
+    justify-content: center;
+    padding: 30px; 
+    background-color: #D15D46;
+
+
+}
+
+
+
+/*QUIENSOY*/
+
+#gridQuiensoy{ 
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24 ;
+    grid-template-columns: 100%;
+    grid-template-rows: 200px 200px 200px 200px 200px 200px ;
+    grid-template-areas:"titulo"
+                        "fotoquiensoy" 
+                        "texto"
+                        "foto1"
+                        "foto2"
+                        "foto3";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.tituloQuienSoy{
+    grid-area: titulo ;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.fotoQuienSoy{
+    grid-area: fotoquiensoy;
+    display: flex;
+    justify-self: center;
+    align-self:  center;
+    width: 80%;
+    padding: 20px; 
+    width:150px;
+    background-color: #D15D46;
+}
+
+.textoQuienSoy{
+    grid-area: texto;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    padding: 10px; 
+    
+    background-color: #D15D46;
+}
+
+.foto1{
+    grid-area: foto1 ;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    width: 150px ;
+}
+
+.foto2{
+    grid-area: foto2;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center ;
+    width:150px ;
+
+}
+
+.foto3{
+    grid-area: foto3;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    width: 150px;
+   
+}
+
+
+
+
+
+
+/*CLASES*/
+
+#gridClases{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 100%;
+    grid-template-rows:300px 100px 100px 100px;
+    grid-template-areas: "banner"
+                         "nivel1"
+                         "nivel2"
+                         "nivel3";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.backgroundClases{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/bannerclases.jpg) ;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.nivel1{
+    grid-area: nivel1;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    margin: 20px 40px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.nivel2{
+    grid-area: nivel2;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    margin: 20px 40px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.nivel3{
+    grid-area: nivel3;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    margin: 20px 40px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+/*INSTRUMENTOS*/
+
+#gridInstrumentos{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 50fr ;
+    grid-template-rows:300px 200px;
+    grid-template-areas: "banner "
+                         "cuerdas" 
+                         "canto";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+    
+}
+.backgroundInstrumentos{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/bannerinstrumentos.jpg) ;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+ 
+.cuerdas{
+    grid-area: cuerdas;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; 
+    margin:20px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.canto{
+    grid-area: canto ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; 
+    margin:20px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+/*CONTACTO*/
+
+#gridContacto {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #221E24;
+    grid-template-columns: 1fr ;
+    grid-template-rows:300px 400px;
+    grid-template-areas: "banner"
+                         "mapa" 
+                         "formulario";
+    row-gap: 0px;
+    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
+}    
+
+
+.backgroundContacto{
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../IMG/bannercontacto.jpg) ;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.mapa{
+    grid-area: mapa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px; 
+    margin:20px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+.formulario{
+    
+    grid-area: formulario;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    align-items: center;
+    padding: 30px; 
+    margin:20px;
+    background-color: #D15D46;
+    line-height: 1.5;
+}
+
+#whatsapp{
+    position: fixed;
+    right: 30px;
+    bottom: 150px;
+    height: 50px;
+    width: 50px;
+}
+
+/*FUENTES*/
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    color: #D15D46;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.texto{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px; 
+}
+
+
+
+/*FOOTER*/
+footer {
+    background-color: #37363d;
+    height: 180px;
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    justify-content: space-between;
+} 
+
+#div1footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+ 
+.afooter{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+}
+
+#div2footer{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-self: center;
+    margin-right: 30px;
+    line-height: 2;
+    font-family: 'Montserrat', sans-serif;
+    color: #F8E0BC; 
+    font-size: 15px
+}
+}
