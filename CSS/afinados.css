@@ -14,15 +14,28 @@ body{
 /*HEADER + NAV*/
 header{
     background-color: #37363d;
-    height:100px;
     width: 100%;
-    display: flex;
+    height: 10vh; 
+    position: fixed;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 0 0.7vh 0;
+    box-shadow: #2F2A26/20%;
+    z-index: 10;
 }
 
 nav{
-    width: 40vw;
+    width: 50vw;
+}
+
+
+.collapse{
+    flex-grow:0;
+}
+
+.navbar{
+    width: 100vw;
 }
 
 #ulnav{
@@ -35,17 +48,18 @@ nav{
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-evenly;
-    margin: 0 30px 0 0 ;
-    padding: 0;    
+    padding-right: 7vw;  
 }
 
 .linav{
     display: flex;
     text-decoration: none;
+    padding-right: 1vw; 
 }
 
 .linknav{
     color: #F8E0BC;
+    text-decoration: none;
 }
 
 .imgLogo{
@@ -57,7 +71,8 @@ nav{
 
 /*MAIN*/
 main{
-    background-color:  #221E24
+    background-color:  #221E24;
+    padding-top: 10vh;
 }
 
 /*INDEX*/
@@ -97,7 +112,7 @@ main{
 }
 
 .textoIndex{
-    color: cornsilk;
+    color: #F8E0BC;
     grid-area: texto;
     display: flex;
     flex-direction: column;
@@ -115,10 +130,10 @@ main{
     width: 100%;
     background-color: #221E24 ;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:400px 400px 400px;
+    grid-template-rows:400px 400px 700px;
     grid-template-areas:"titulo titulo titulo" 
                         "fotoquiensoy texto texto"
-                         "foto1 foto2 foto3";
+                        "galeria galeria galeria";
     row-gap: 0px;
     justify-content: space-around;
     justify-content: center;
@@ -245,31 +260,6 @@ main{
 }
 
 
-
-
-
-
-
-/*
-#divPadre{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 0 350px;
-}
-
-.divHijo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 50px; 
-    margin:20px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-*/
 .texto{
     font-family: 'Montserrat', sans-serif;
     font-size: 18px; 
@@ -324,7 +314,7 @@ main{
     line-height: 1.5;
 }
 
-/*
+
 
 
 /*CONTACTO*/
@@ -405,12 +395,12 @@ h1{
 
 h3{
     color: #F8E0BC;
-    padding-left: 100px;
+    
     font-family: 'Montserrat', sans-serif;  
 }
 
 .texto{
-    color: #F8E0BC;
+    color: #221E24;
     padding-left: 100px;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px; 
@@ -466,9 +456,14 @@ header{
     height: 170px; 
     width: 100%;
     display: flex;
+    position:relative;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    box-shadow: #2F2A26/20%;
+    z-index: 10;
+    padding: 1rem;
+    
 }
 
 
@@ -476,17 +471,27 @@ nav{
     width: 40vw;
 }
 
+.collapse{
+    flex-grow:0;
+}
+
+.navbar{
+    width: 100vw;
+}
+
 #ulnav{
     list-style-type: none;
     font-family: 'Montserrat', sans-serif;
-    
+    line-height: 1em;
     color: #F8E0BC;
-    height: 8vh;
+    height: 13vh;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-evenly;
+    height: 13vh;
+    line-height: 1em;
  
 }
 
@@ -573,10 +578,10 @@ main{
     width: 100%;
     background-color: #221E24 ;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 200px 200px 200px;
+    grid-template-rows: 200px 200px 700px;
     grid-template-areas:"titulo titulo titulo" 
                         "fotoquiensoy texto texto"
-                         "foto1 foto2 foto3";
+                         "galeria galeria galeria";
     row-gap: 0px;
     justify-content: space-around;
     justify-content: center;
@@ -611,31 +616,13 @@ main{
     background-color: #D15D46;
 }
 
-.foto1{
-    grid-area: foto1 ;
+.galeria{
+    grid-area: galeria;
     display: flex;
     justify-self: center;
     align-self: center;
     width: 70% ;
 }
-
-.foto2{
-    grid-area: foto2;
-    display: flex;
-    justify-self: center;
-    align-self: center ;
-    width: 70% ;
-}
-
-.foto3{
-    grid-area: foto3;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    width: 70% ;
-}
-
-
 
 
 
@@ -893,6 +880,10 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    position:relative;
+    box-shadow: #2F2A26/20%;
+    z-index: 10;
+    padding: 1rem;
 }
 
 
@@ -900,18 +891,26 @@ nav{
     width: 40vw;
 }
 
+.collapse{
+    flex-grow:0;
+}
+
+.navbar{
+    width: 100vw;
+}
+
 #ulnav{
     list-style-type: none;
     font-family: 'Montserrat', sans-serif;
-    
+    line-height: 1em;
     color: #F8E0BC;
-    height: 8vh;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-evenly;
- 
+    margin-top: 1vh;
+    height: 14vh;
 }
 
 .linav{
@@ -1004,13 +1003,11 @@ main{
     width: 100%;
     background-color: #221E24 ;
     grid-template-columns: 100%;
-    grid-template-rows: 200px 200px 200px 200px 200px 200px ;
+    grid-template-rows: 200px 200px 200px 500px;
     grid-template-areas:"titulo"
                         "fotoquiensoy" 
                         "texto"
-                        "foto1"
-                        "foto2"
-                        "foto3";
+                        "galeria";
     row-gap: 0px;
     justify-content: space-around;
     justify-content: center;
@@ -1047,38 +1044,13 @@ main{
     background-color: #D15D46;
 }
 
-.foto1{
-    grid-area: foto1 ;
+.galeria{
+    grid-area: galeria;
     display: flex;
     flex-direction: column;
     justify-self: center;
     align-self: center;
-    width: 150px ;
 }
-
-.foto2{
-    grid-area: foto2;
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-self: center ;
-    width:150px ;
-
-}
-
-.foto3{
-    grid-area: foto3;
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-self: center;
-    width: 150px;
-   
-}
-
-
-
-
 
 
 /*CLASES*/
@@ -1121,7 +1093,7 @@ main{
     justify-content: center;
     align-items: center;
     padding: 20px; 
-    margin: 20px 40px;
+
     background-color: #D15D46;
     line-height: 1.5;
 }
@@ -1133,7 +1105,6 @@ main{
     justify-content: center;
     align-items: center;
     padding: 20px; 
-    margin: 20px 40px;
     background-color: #D15D46;
     line-height: 1.5;
 }
@@ -1145,7 +1116,7 @@ main{
     justify-content: center;
     align-items: center;
     padding: 20px; 
-    margin: 20px 40px;
+
     background-color: #D15D46;
     line-height: 1.5;
 }
