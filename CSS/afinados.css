@@ -3,32 +3,22 @@
     padding: 0;
 }
 
-
-
 body{
-    background-color: #37363d;
+    background-color: #ffff;
 }
 
-@media screen and (min-width: 769px){
-    
-/*HEADER + NAV*/
+/*HEADER+MENU*/
 header{
-    background-color: #37363d;
-    width: 100%;
-    height: 10vh; 
-    position: fixed;
-    flex-direction: row;
+    background-color: #1f1d1e;
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     box-shadow: 0 0 0.7vh 0;
-    box-shadow: #2F2A26/20%;
+    box-shadow: #1f1d1e/20%;
     z-index: 10;
+    position: fixed;
 }
-
-nav{
-    width: 50vw;
-}
-
 
 .collapse{
     flex-grow:0;
@@ -41,7 +31,7 @@ nav{
 #ulnav{
     font-family: 'Montserrat', sans-serif;
     list-style-type: none;
-    color: #F8E0BC;
+    color: #D9564A;
     height: 8vh;
     display: flex;
     flex-direction: row;
@@ -54,25 +44,25 @@ nav{
 .linav{
     display: flex;
     text-decoration: none;
-    padding-right: 1vw; 
 }
 
 .linknav{
-    color: #F8E0BC;
+    color: #D9564A;
     text-decoration: none;
 }
 
+.linknav:hover{
+    color:#A6483F;
+}
+
 .imgLogo{
-    height: 8vh;
     display: flex;
     justify-content: flex-start;
-    margin: 0 0 0 30px;
 }
 
 /*MAIN*/
 main{
-    background-color:  #221E24;
-    padding-top: 10vh;
+    background-color:  #ffff;
 }
 
 /*INDEX*/
@@ -81,11 +71,7 @@ main{
     display: grid;
     height: 100%;
     width: 100%;
-    background-color: #221E24;
-    grid-template-columns: 50% 50%;
-    grid-template-rows:700px 400px;
-    grid-template-areas: "banner banner"
-                         "foto texto";
+    background-color: #ffff;
     row-gap: 0px;
     justify-content: space-around;
     justify-content: center;
@@ -96,31 +82,79 @@ main{
     grid-area: banner;
     display: flex;
     flex-direction: column;
-    background-image: url(../IMG/banerindex.jpg) ;
+    background-image: url(../IMG/bannerindex.png) ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.fotoIndex{
-    grid-area: foto;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    height: 50%;
-
-}
-
 .textoIndex{
-    color: #F8E0BC;
+    color: #1f1d1e;
     grid-area: texto;
     display: flex;
     flex-direction: column;
-    margin-left: 10%;
     display: flex;
     align-self: center;
-    justify-items: start;
-    padding: 50px;
+    justify-self: center;
+}
+
+.profesor{
+    grid-area: profesor;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clasesIndex{
+    grid-area: clases;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.didactica{
+    grid-area: didactica;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonClases{
+    grid-area: botonClases;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    padding: 1vh;
+}
+
+.galeriaIndex{
+    grid-area: galeriaI;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.galeriaI{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    transition: 1s;
+    height: 80%;
+}
+
+.galeriaI:hover{
+    filter: drop-shadow(0 0.2vh 0.5vh #2F2A26);
+}
+
+
+.imgIndex{
+    display: flex;
+    width: 5vw;
 }
 
 /*QUIENSOY*/
@@ -128,34 +162,21 @@ main{
     display: grid;
     height: 100%;
     width: 100%;
-    background-color: #221E24 ;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:400px 400px 700px;
-    grid-template-areas:"titulo titulo titulo" 
-                        "fotoquiensoy texto texto"
-                        "galeria galeria galeria";
+    background-color: #ffff ;
     row-gap: 0px;
     justify-content: space-around;
     justify-content: center;
     align-content: center;
-
 }
 
 .tituloQuienSoy{
-    grid-area: titulo ;
+    grid-area: titulo;
+    background-image: url(../IMG/bannerquiensoy.png);
     display: flex;
-    justify-self: center;
-    align-self: center;
-}
-
-.fotoQuienSoy{
-    grid-area: fotoquiensoy;
-    display: flex;
-    justify-self: center;
-    align-self:  center;
-    width: 80%;
-    padding: 20px;
-    background-color: #D15D46;
+    justify-content: center;                  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .textoQuienSoy{
@@ -164,35 +185,21 @@ main{
     flex-direction: column;
     justify-content: center;
     align-self: center;
-    padding: 20px;
     background-color: #D15D46;
 }
 
-.foto1{
-    grid-area: foto1 ;
+.galeriaQuienSoy{
+    grid-area: fotoquiensoy;
     display: flex;
-    justify-self: center;
     align-self: center;
-    width: 70% ;
-}
-
-.foto2{
-    grid-area: foto2;
-    display: flex;
     justify-self: center;
-    align-self: center ;
-    width: 70% ;
+    transition: 1s;
+    height: 80%;
 }
 
-.foto3{
-    grid-area: foto3;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    width: 70% ;
+.galeriaQuienSoy:hover{
+    filter: drop-shadow(0 0.2vh 0.5vh #2F2A26);
 }
-
-
 
 /*CLASES*/
 
@@ -201,10 +208,6 @@ main{
     height: 100%;
     width: 100%;
     background-color: #221E24;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:700px 400px;
-    grid-template-areas: "banner banner banner"
-                         "nivel1 nivel2 nivel3";
     row-gap: 0px;
     justify-content: space-around;
     justify-content: center;
@@ -216,7 +219,7 @@ main{
     grid-area: banner;
     display: flex;
     flex-direction: column;
-    background-image: url(../IMG/bannerclases.jpg) ;
+    background-image: url(../IMG/bannerclases.png) ;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -226,7 +229,6 @@ main{
 .nivel1{
     grid-area: nivel1;
     display: flex;
-
     justify-content: center;
     align-items: center;
     padding: 50px; 
@@ -238,7 +240,6 @@ main{
 .nivel2{
     grid-area: nivel2;
     display: flex;
-
     justify-content: center;
     align-items: center;
     padding: 50px; 
@@ -250,7 +251,6 @@ main{
 .nivel3{
     grid-area: nivel3;
     display: flex;
-
     justify-content: center;
     align-items: center;
     padding: 50px; 
@@ -262,8 +262,8 @@ main{
 
 .texto{
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px; 
 }
+
 /*INSTRUMENTOS*/
 
 #gridInstrumentos{
@@ -271,21 +271,16 @@ main{
     height: 100%;
     width: 100%;
     background-color: #221E24;
-    grid-template-columns: 50fr 50fr ;
-    grid-template-rows:700px 400px;
-    grid-template-areas: "banner banner "
-                         "cuerdas canto";
     row-gap: 0px;
     justify-content: space-around;
     justify-content: center;
-    align-content: center;
-    
+    align-content: center; 
 }
 .backgroundInstrumentos{
     grid-area: banner;
     display: flex;
     flex-direction: column;
-    background-image: url(../IMG/bannerinstrumentos.jpg) ;
+    background-image: url(../IMG/bannerinstrumentos.png) ;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -314,9 +309,6 @@ main{
     line-height: 1.5;
 }
 
-
-
-
 /*CONTACTO*/
 
 #gridContacto {
@@ -324,22 +316,17 @@ main{
     height: 100%;
     width: 100%;
     background-color: #221E24;
-    grid-template-columns: 50fr 50fr ;
-    grid-template-rows:700px 500px;
-    grid-template-areas: "banner banner "
-                         "mapa formulario";
     row-gap: 0px;
     justify-content: space-around;
     justify-content: center;
     align-content: center;
 }    
 
-
 .backgroundContacto{
     grid-area: banner;
     display: flex;
     flex-direction: column;
-    background-image: url(../IMG/bannercontacto.jpg) ;
+    background-image: url(../IMG/bannercontacto.png) ;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -373,47 +360,37 @@ main{
 
 #whatsapp{
     position: fixed;
-    right: 30px;
-    bottom: 150px;
-    height: 50px;
-    width: 50px;
 }
+
 
 /*FUENTES*/
 
 h1{
     font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
-    color: #D15D46;
+    color: #A6483F;
     line-height: 1.5;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 100px;
+    text-shadow: #2F2A26 0.1em 0.1em 0.2em;
+    font-weight: 700;
 }
 
 h3{
-    color: #F8E0BC;
-    
+    color: #A6483F;
     font-family: 'Montserrat', sans-serif;  
 }
 
 .texto{
     color: #221E24;
-    padding-left: 100px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px; 
     line-height: 1.5;
 }
 
-
-
 /*FOOTER*/
 footer {
-    background-color: #37363d;
-    height: 140px;
-    margin: 0px;
+    background-color: #221E24;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -425,24 +402,160 @@ footer {
     justify-content: space-between;
     justify-content: center;
     align-items: center;
-    margin-left: 30px;
 }
  
 .afooter{
     display: flex;
-    height: 40px;
-    width: 40px;
-    margin-left: 10px;
 }
 
 #div2footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-right: 30px;
     line-height: 2;
     font-family: 'Montserrat', sans-serif;
     color: #F8E0BC; 
+}
+
+
+
+.botonLink{
+    text-decoration: none;
+    color: #ffff;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #D9564A;
+    transition: 1s;
+    display: flex;
+    border: 0.1vh solid #D9564A;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonLink:hover{
+    background-color: transparent;
+    color: #1f1d1e;
+}
+
+/*DESKTOP*/
+@media screen and (min-width: 769px){
+    
+/*HEADER + NAV*/
+header{
+    height: 10vh; 
+}
+
+nav{
+    width: 50vw;
+}
+
+.linav{
+    padding-right: 1vw; 
+}
+
+.imgLogo{
+    height: 8vh;
+}
+
+/*MAIN*/
+main{
+    padding-top: 10vh;
+}
+
+/*INDEX*/
+
+#gridIndex{
+    grid-template-columns: 50% 50%;
+    grid-template-rows:70vh 30vh 30vh 30vh 10vh 80vh;
+    grid-template-areas: "banner banner"
+                         "texto texto"
+                         "profesor profesor"
+                         "clases didactica"
+                         "botonClases botonClases"
+                         "galeriaI galeriaI";
+}
+
+
+/*QUIENSOY*/
+#gridQuiensoy{ 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 700px 700px;
+    grid-template-areas:"titulo titulo titulo" 
+                        "fotoquiensoy texto texto";
+}
+
+.textoQuienSoy{
+    padding: 20px;
+}
+
+/*CLASES*/
+
+#gridClases{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:700px 400px;
+    grid-template-areas: "banner banner banner"
+                         "nivel1 nivel2 nivel3";
+}
+
+.texto{
+    font-size: 18px; 
+}
+/*INSTRUMENTOS*/
+
+#gridInstrumentos{
+    grid-template-columns: 50fr 50fr ;
+    grid-template-rows:700px 400px;
+    grid-template-areas: "banner banner "
+                         "cuerdas canto";
+}
+
+/*CONTACTO*/
+
+#gridContacto {
+    grid-template-columns: 50fr 50fr ;
+    grid-template-rows:700px 500px;
+    grid-template-areas: "banner banner "
+                         "mapa formulario";
+}    
+
+
+#whatsapp{
+    right: 30px;
+    bottom: 150px;
+    height: 50px;
+    width: 50px;
+}
+
+/*FUENTES*/
+
+h1{
+    font-size: 50px;
+}
+
+.texto{
+    padding-left: 100px;
+    font-size: 18px; 
+}
+
+
+
+/*FOOTER*/
+footer {
+    height: 140px;
+    margin: 0px;
+} 
+
+#div1footer{
+    margin-left: 30px;
+}
+ 
+.afooter{
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+}
+
+#div2footer{
+    margin-right: 30px;
     font-size: 15px
 }
 }
@@ -452,120 +565,39 @@ footer {
 
 /*HEADER + NAV*/
 header{
-    background-color: #221E24;
     height: 170px; 
-    width: 100%;
-    display: flex;
-    position:relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    box-shadow: #2F2A26/20%;
-    z-index: 10;
     padding: 1rem;
-    
 }
-
 
 nav{
     width: 40vw;
 }
 
-.collapse{
-    flex-grow:0;
-}
-
-.navbar{
-    width: 100vw;
-}
-
-#ulnav{
-    list-style-type: none;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1em;
-    color: #F8E0BC;
-    height: 13vh;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 13vh;
-    line-height: 1em;
- 
-}
-
-.linav{
-    display: flex;
-    text-decoration: none;
-}
-
-.linknav{
-    color: #F8E0BC;
-    text-decoration: none;
-    font-size: 16px;
-}
 
 .imgLogo{
     height: 8vh;
-    display: flex;
-    justify-content: flex-start;
-    margin: 0 0 0 30px;
 }
 
 /*MAIN*/
 main{
-    background-color:  #221E24
+    padding-top: 170px;
 }
 
 /*INDEX*/
 
 #gridIndex{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24;
     grid-template-columns: 100%;
-    grid-template-rows:300px 200px 100px;
+    grid-template-rows:20vh 20vh 20vh 20vh 20vh 10vh 50vh;
     grid-template-areas: "banner"
-                         "foto"
-                         "texto";
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-}
-
-.backgroundIndex{
-    grid-area: banner;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../IMG/banerindex.jpg) ;
-    justify-content: center;
-    align-content: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.fotoIndex{
-    grid-area: foto;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    height: 80%;
-
+                         "texto"
+                         "profesor"
+                         "clases"
+                         "didactica"
+                         "botonClases"
+                         "galeriaI";
 }
 
 .textoIndex{
-    color: cornsilk;
-    font-family: 'Montserrat', sans-serif;
-    grid-area: texto;
-    display: flex;
-    flex-direction: column;
-    display: flex;
-    align-self: center;
-    justify-items: center;
     padding: 50px;
 }
 
@@ -573,233 +605,44 @@ main{
 
 
 #gridQuiensoy{ 
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24 ;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 200px 200px 700px;
+    grid-template-rows: 200px 400px;
     grid-template-areas:"titulo titulo titulo" 
-                        "fotoquiensoy texto texto"
-                         "galeria galeria galeria";
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-
-}
-
-.tituloQuienSoy{
-    grid-area: titulo ;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-}
-
-.fotoQuienSoy{
-    grid-area: fotoquiensoy;
-    display: flex;
-    justify-self: center;
-    align-self:  center;
-    width: 80%;
-    padding: 20px;
-    background-color: #D15D46;
+                        "fotoquiensoy texto texto";
 }
 
 .textoQuienSoy{
-    grid-area: texto;
-    display: flex ;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
     padding: 20px;
-    background-color: #D15D46;
 }
-
-.galeria{
-    grid-area: galeria;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    width: 70% ;
-}
-
-
 
 /*CLASES*/
 
 #gridClases{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows:300px 200px;
     grid-template-areas: "banner banner banner"
                          "nivel1 nivel2 nivel3";
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-}
-
-
-.backgroundClases{
-    grid-area: banner;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../IMG/bannerclases.jpg) ;
-    width: 100%;
-    justify-content: center;
-    align-content: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.nivel1{
-    grid-area: nivel1;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    padding: 20px; 
-    margin: 30px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
-.nivel2{
-    grid-area: nivel2;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    padding: 20px; 
-    margin:30px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
-.nivel3{
-    grid-area: nivel3;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    padding: 20px; 
-    margin:30px;
-    background-color: #D15D46;
-    line-height: 1.5;
 }
 
 /*INSTRUMENTOS*/
 
-
 #gridInstrumentos{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24;
     grid-template-columns: 50fr 50fr ;
     grid-template-rows:300px 200px;
     grid-template-areas: "banner banner "
                          "cuerdas canto";
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-    
-}
-.backgroundInstrumentos{
-    grid-area: banner;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../IMG/bannerinstrumentos.jpg) ;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
- 
-.cuerdas{
-    grid-area: cuerdas;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px; 
-    margin:20px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
-.canto{
-    grid-area: canto ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px; 
-    margin:20px;
-    background-color: #D15D46;
-    line-height: 1.5;
 }
 
 /*CONTACTO*/
 
 #gridContacto {
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24;
     grid-template-columns: 1fr 1fr ;
     grid-template-rows:350px 350px;
     grid-template-areas: "banner banner "
                          "mapa formulario";
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
 }    
 
-
-.backgroundContacto{
-    grid-area: banner;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../IMG/bannercontacto.jpg) ;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.mapa{
-    grid-area: mapa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px; 
-    margin:10px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
-.formulario{
-    
-    grid-area: formulario;
-    display: flex;
-    flex-direction: column;
-    justify-items: start;
-    align-items: center;
-    padding: 30px; 
-    margin:20px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
-
 #whatsapp{
-    position: fixed;
     right: 30px;
     bottom: 150px;
     height: 50px;
@@ -809,62 +652,33 @@ main{
 /*FUENTES*/
 
 h1{
-    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
-    color: #D15D46;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
 }
 
 .texto{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px; 
+    font-size: 15px; 
 }
 
 
 
 /*FOOTER*/
 footer {
-    background-color: #37363d;
     height: 180px;
     margin: 0px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    justify-content: space-between;
 } 
 
 #div1footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-content: center;
-    align-items: center;
     margin-top: 30px;
 }
  
 .afooter{
-    display: flex;
     height: 40px;
     width: 40px;
     margin-left: 10px;
 }
 
 #div2footer{
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-self: center;
     margin-right: 30px;
-    line-height: 2;
-    font-family: 'Montserrat', sans-serif;
-    color: #F8E0BC; 
     font-size: 15px
 }
 }
@@ -873,361 +687,91 @@ footer {
 @media screen and (min-width: 0px) and (max-width: 599px) {
     /*HEADER + NAV*/
 header{
-    background-color: #221E24;
     height: 170px; 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    position:relative;
-    box-shadow: #2F2A26/20%;
-    z-index: 10;
     padding: 1rem;
 }
-
 
 nav{
     width: 40vw;
 }
 
-.collapse{
-    flex-grow:0;
-}
-
-.navbar{
-    width: 100vw;
-}
-
-#ulnav{
-    list-style-type: none;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1em;
-    color: #F8E0BC;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 1vh;
-    height: 14vh;
-}
-
-.linav{
-    display: flex;
-    text-decoration: none;
-}
-
-.linknav{
-    color: #F8E0BC;
-    text-decoration: none;
-    font-size: 16px;
-}
-
 .imgLogo{
     height: 8vh;
-    display: flex;
-    justify-content: flex-start;
-    margin: 0 0 0 30px;
 }
 
 /*MAIN*/
 main{
-    background-color:  #221E24
+    padding-top: 170px;
 }
 
 /*INDEX*/
 
 #gridIndex{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24;
     grid-template-columns: 100%;
-    grid-template-rows:300px 300px 50px;
+    grid-template-rows:20vh 20vh 20vh 20vh 20vh 10vh 50vh;
     grid-template-areas: "banner"
-                         "foto"
-                         "texto";
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-}
-
-.backgroundIndex{
-    grid-area: banner;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../IMG/banerindex.jpg) ;
-    justify-content: center;
-    align-content: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.fotoIndex{
-    grid-area: foto;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    height: 80%;
-
+                         "texto"
+                         "profesor"
+                         "clases"
+                         "didactica"
+                         "botonClases"
+                         "galeriaI";
 }
 
 .textoIndex{
-    color: cornsilk;
-    font-family: 'Montserrat', sans-serif;
-
-    grid-area: texto;
-    display: flex;
-    flex-direction: column;
-    display: flex;
-    align-self: center;
-    justify-items: center;
-    padding: 50px;
-    justify-content: center;
     padding: 30px; 
-    background-color: #D15D46;
-
-
 }
-
-
 
 /*QUIENSOY*/
 
 #gridQuiensoy{ 
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24 ;
     grid-template-columns: 100%;
-    grid-template-rows: 200px 200px 200px 500px;
+    grid-template-rows: 200px 400px 200px;
     grid-template-areas:"titulo"
                         "fotoquiensoy" 
-                        "texto"
-                        "galeria";
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-
-}
-
-.tituloQuienSoy{
-    grid-area: titulo ;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-}
-
-.fotoQuienSoy{
-    grid-area: fotoquiensoy;
-    display: flex;
-    justify-self: center;
-    align-self:  center;
-    width: 80%;
-    padding: 20px; 
-    width:150px;
-    background-color: #D15D46;
+                        "texto";
 }
 
 .textoQuienSoy{
-    grid-area: texto;
-    display: flex ;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
     padding: 10px; 
-    
-    background-color: #D15D46;
 }
 
-.galeria{
-    grid-area: galeria;
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-self: center;
+.galeriaQuienSoy{
+    width: 40%;
 }
-
 
 /*CLASES*/
 
 #gridClases{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24;
     grid-template-columns: 100%;
     grid-template-rows:300px 100px 100px 100px;
     grid-template-areas: "banner"
                          "nivel1"
                          "nivel2"
                          "nivel3";
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-}
-
-
-.backgroundClases{
-    grid-area: banner;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../IMG/bannerclases.jpg) ;
-    width: 100%;
-    justify-content: center;
-    align-content: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.nivel1{
-    grid-area: nivel1;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    padding: 20px; 
-
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
-.nivel2{
-    grid-area: nivel2;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    padding: 20px; 
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
-.nivel3{
-    grid-area: nivel3;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    padding: 20px; 
-
-    background-color: #D15D46;
-    line-height: 1.5;
 }
 
 /*INSTRUMENTOS*/
 
 #gridInstrumentos{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24;
-    grid-template-columns: 50fr ;
+    grid-template-columns: 100%;
     grid-template-rows:300px 200px;
     grid-template-areas: "banner "
                          "cuerdas" 
-                         "canto";
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-    
-}
-.backgroundInstrumentos{
-    grid-area: banner;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../IMG/bannerinstrumentos.jpg) ;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
- 
-.cuerdas{
-    grid-area: cuerdas;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px; 
-    margin:20px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
-.canto{
-    grid-area: canto ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px; 
-    margin:20px;
-    background-color: #D15D46;
-    line-height: 1.5;
+                         "canto";    
 }
 
 /*CONTACTO*/
 
 #gridContacto {
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24;
     grid-template-columns: 1fr ;
     grid-template-rows:300px 400px;
     grid-template-areas: "banner"
                          "mapa" 
                          "formulario";
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
 }    
 
-
-.backgroundContacto{
-    grid-area: banner;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../IMG/bannercontacto.jpg) ;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.mapa{
-    grid-area: mapa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 45px; 
-    margin:20px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
-.formulario{
-    
-    grid-area: formulario;
-    display: flex;
-    flex-direction: column;
-    justify-items: start;
-    align-items: center;
-    padding: 30px; 
-    margin:20px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
 #whatsapp{
-    position: fixed;
     right: 30px;
     bottom: 150px;
     height: 50px;
@@ -1237,19 +781,10 @@ main{
 /*FUENTES*/
 
 h1{
-    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
-    color: #D15D46;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
 }
 
 .texto{
-    font-family: 'Montserrat', sans-serif;
     font-size: 11px; 
 }
 
@@ -1257,42 +792,22 @@ h1{
 
 /*FOOTER*/
 footer {
-    background-color: #37363d;
     height: 180px;
     margin: 0px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    justify-content: space-between;
 } 
 
 #div1footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-content: center;
-    align-items: center;
     margin-top: 30px;
 }
  
 .afooter{
-    display: flex;
     height: 40px;
     width: 40px;
     margin-left: 10px;
 }
 
 #div2footer{
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-self: center;
     margin-right: 30px;
-    line-height: 2;
-    font-family: 'Montserrat', sans-serif;
-    color: #F8E0BC; 
     font-size: 15px
 }
 }
