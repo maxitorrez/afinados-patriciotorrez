@@ -1,813 +1,586 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+* {
+  margin: 0;
+  padding: 0; }
 
-body{
-    background-color: #ffff;
-}
+body {
+  background-color: #ffff; }
 
 /*HEADER+MENU*/
-header{
-    background-color: #1f1d1e;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    box-shadow: 0 0 0.7vh 0;
-    box-shadow: #1f1d1e/20%;
-    z-index: 10;
-    position: fixed;
-}
-
-.collapse{
-    flex-grow:0;
-}
-
-.navbar{
-    width: 100vw;
-}
-
-#ulnav{
-    font-family: 'Montserrat', sans-serif;
-    list-style-type: none;
-    color: #D9564A;
-    height: 8vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-right: 7vw;  
-}
-
-.linav{
-    display: flex;
-    text-decoration: none;
-}
-
-.linknav{
-    color: #D9564A;
-    text-decoration: none;
-}
-
-.linknav:hover{
-    color:#A6483F;
-}
-
-.imgLogo{
-    display: flex;
-    justify-content: flex-start;
-}
+header {
+  background-color: #1f1d1e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 0 0 0.7vh 0;
+  box-shadow: #1f1d1e/20%;
+  z-index: 10;
+  position: fixed; }
+  header .navbar {
+    width: 100%; }
+    header .navbar img {
+      display: flex;
+      padding-left: 7vw; }
+    header .navbar .collapse {
+      flex-grow: 0; }
+    header .navbar ul {
+      font-family: 'Montserrat', sans-serif;
+      list-style-type: none;
+      color: #D9564A;
+      height: 8vh;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-evenly;
+      padding-right: 7vw; }
+      header .navbar ul li {
+        display: flex;
+        text-decoration: none; }
+        header .navbar ul li a {
+          color: #D9564A;
+          text-decoration: none;
+          background-color: transparent;
+          border: 0.1vh solid transparent;
+          transition: 1s; }
+          header .navbar ul li a:hover {
+            color: #A6483F; }
 
 /*MAIN*/
-main{
-    background-color:  #ffff;
-}
+main {
+  background-color: #ffff; }
 
 /*INDEX*/
-
-#gridIndex{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #ffff;
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-}
-
-.backgroundIndex{
+#gridIndex {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  background-color: #ffff;
+  row-gap: 0px;
+  justify-content: space-around;
+  justify-content: center;
+  align-content: center; }
+  #gridIndex .backgroundIndex {
     grid-area: banner;
     display: flex;
     flex-direction: column;
-    background-image: url(../IMG/bannerindex.png) ;
+    background-image: url(../IMG/bannerindex.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-}
-
-.textoIndex{
+    background-size: cover; }
+  #gridIndex .textoIndex {
     color: #1f1d1e;
     grid-area: texto;
     display: flex;
     flex-direction: column;
     display: flex;
     align-self: center;
-    justify-self: center;
-}
-
-.profesor{
+    justify-self: center; }
+  #gridIndex .profesor {
     grid-area: profesor;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-
-.clasesIndex{
+    align-items: center; }
+  #gridIndex .clasesIndex {
     grid-area: clases;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-
-.didactica{
+    align-items: center; }
+  #gridIndex .didactica {
     grid-area: didactica;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-
-.botonClases{
+    align-items: center; }
+  #gridIndex .botonClases {
     grid-area: botonClases;
     display: flex;
     flex-direction: column;
     justify-self: center;
     align-self: center;
-    padding: 1vh;
-}
-
-.galeriaIndex{
+    padding: 1vh; }
+  #gridIndex .galeriaIndex {
     grid-area: galeriaI;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-
-.galeriaI{
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    transition: 1s;
-    height: 80%;
-}
-
-.galeriaI:hover{
-    filter: drop-shadow(0 0.2vh 0.5vh #2F2A26);
-}
-
-
-.imgIndex{
+    align-items: center; }
+    #gridIndex .galeriaIndex .galeriaI {
+      display: flex;
+      align-self: center;
+      justify-self: center;
+      transition: 1s;
+      height: 80%; }
+      #gridIndex .galeriaIndex .galeriaI:hover {
+        filter: drop-shadow(0 0.2vh 0.5vh #2F2A26); }
+  #gridIndex .imgIndex {
     display: flex;
     width: 5vw;
-}
+    filter: drop-shadow(0 0.2vh 0.5vh #2F2A26); }
 
 /*QUIENSOY*/
-#gridQuiensoy{ 
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #ffff ;
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-}
+#gridQuiensoy {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  background-color: #ffff;
+  row-gap: 0px;
+  justify-content: space-around;
+  justify-content: center;
+  align-content: center; }
 
-.tituloQuienSoy{
-    grid-area: titulo;
-    background-image: url(../IMG/bannerquiensoy.png);
-    display: flex;
-    justify-content: center;                  
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
+.tituloQuienSoy {
+  grid-area: titulo;
+  background-image: url(../IMG/bannerquiensoy.png);
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
 
-.textoQuienSoy{
-    grid-area: texto;
-    display:flex ;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    background-color: #D15D46;
-}
+.textoQuienSoy {
+  grid-area: texto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  background-color: #D15D46; }
 
-.galeriaQuienSoy{
-    grid-area: fotoquiensoy;
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    transition: 1s;
-    height: 80%;
-}
+.galeriaQuienSoy {
+  grid-area: fotoquiensoy;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  transition: 1s;
+  height: 80%; }
 
-.galeriaQuienSoy:hover{
-    filter: drop-shadow(0 0.2vh 0.5vh #2F2A26);
-}
+.galeriaQuienSoy:hover {
+  filter: drop-shadow(0 0.2vh 0.5vh #2F2A26); }
 
 /*CLASES*/
+#gridClases {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  background-color: #221E24;
+  row-gap: 0px;
+  justify-content: space-around;
+  justify-content: center;
+  align-content: center; }
 
-#gridClases{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24;
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-}
+.backgroundClases {
+  grid-area: banner;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../IMG/bannerclases.png);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
 
+.nivel1 {
+  grid-area: nivel1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: 50px;
+  background-color: #D15D46;
+  line-height: 1.5; }
 
-.backgroundClases{
-    grid-area: banner;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../IMG/bannerclases.png) ;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
+.nivel2 {
+  grid-area: nivel2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: 50px;
+  background-color: #D15D46;
+  line-height: 1.5; }
 
-.nivel1{
-    grid-area: nivel1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px; 
-    margin: 50px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
+.nivel3 {
+  grid-area: nivel3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: 50px;
+  background-color: #D15D46;
+  line-height: 1.5; }
 
-.nivel2{
-    grid-area: nivel2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px; 
-    margin:50px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
-.nivel3{
-    grid-area: nivel3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px; 
-    margin:50px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
-
-
-.texto{
-    font-family: 'Montserrat', sans-serif;
-}
+.texto {
+  font-family: 'Montserrat', sans-serif; }
 
 /*INSTRUMENTOS*/
+#gridInstrumentos {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  background-color: #221E24;
+  row-gap: 0px;
+  justify-content: space-around;
+  justify-content: center;
+  align-content: center; }
 
-#gridInstrumentos{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24;
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center; 
-}
-.backgroundInstrumentos{
-    grid-area: banner;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../IMG/bannerinstrumentos.png) ;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
- 
-.cuerdas{
-    grid-area: cuerdas;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px; 
-    margin:50px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
+.backgroundInstrumentos {
+  grid-area: banner;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../IMG/bannerinstrumentos.png);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
 
-.canto{
-    grid-area: canto ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px; 
-    margin:50px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
+.cuerdas {
+  grid-area: cuerdas;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: 50px;
+  background-color: #D15D46;
+  line-height: 1.5; }
+
+.canto {
+  grid-area: canto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: 50px;
+  background-color: #D15D46;
+  line-height: 1.5; }
 
 /*CONTACTO*/
-
 #gridContacto {
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #221E24;
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-}    
+  display: grid;
+  height: 100%;
+  width: 100%;
+  background-color: #221E24;
+  row-gap: 0px;
+  justify-content: space-around;
+  justify-content: center;
+  align-content: center; }
 
-.backgroundContacto{
-    grid-area: banner;
-    display: flex;
-    flex-direction: column;
-    background-image: url(../IMG/bannercontacto.png) ;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
+.backgroundContacto {
+  grid-area: banner;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../IMG/bannercontacto.png);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
 
-.mapa{
-    grid-area: mapa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px; 
-    margin:50px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
+.mapa {
+  grid-area: mapa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: 50px;
+  background-color: #D15D46;
+  line-height: 1.5; }
 
-.formulario{
-    
-    grid-area: formulario;
-    display: flex;
-    flex-direction: column;
-    justify-items: start;
-    align-items: center;
-    padding: 50px; 
-    margin:50px;
-    background-color: #D15D46;
-    line-height: 1.5;
-}
+.formulario {
+  grid-area: formulario;
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+  align-items: center;
+  padding: 50px;
+  margin: 50px;
+  background-color: #D15D46;
+  line-height: 1.5; }
 
-
-#whatsapp{
-    position: fixed;
-}
-
+#whatsapp {
+  position: fixed; }
 
 /*FUENTES*/
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #A6483F;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: #2F2A26 0.1em 0.1em 0.2em;
+  font-weight: 700; }
 
-h1{
-    font-family: 'Montserrat', sans-serif;
-    color: #A6483F;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-shadow: #2F2A26 0.1em 0.1em 0.2em;
-    font-weight: 700;
-}
+h3 {
+  color: #A6483F;
+  font-family: 'Montserrat', sans-serif; }
 
-h3{
-    color: #A6483F;
-    font-family: 'Montserrat', sans-serif;  
-}
-
-.texto{
-    color: #221E24;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
-}
+.texto {
+  color: #1f1d1e;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5; }
 
 /*FOOTER*/
 footer {
-    background-color: #221E24;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-} 
-
-#div1footer{
+  background-color: #221E24;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; }
+  footer #div1footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     justify-content: center;
-    align-items: center;
-}
- 
-.afooter{
-    display: flex;
-}
-
-#div2footer{
+    align-items: center; }
+    footer #div1footer .afooter {
+      display: flex; }
+  footer #div2footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     line-height: 2;
     font-family: 'Montserrat', sans-serif;
-    color: #F8E0BC; 
-}
+    color: #F8E0BC; }
 
+.botonLink {
+  text-decoration: none;
+  color: #ffff;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #D9564A;
+  transition: 1s;
+  display: flex;
+  border: 0.1vh solid #D9564A;
+  justify-content: center;
+  align-items: center; }
 
-
-.botonLink{
-    text-decoration: none;
-    color: #ffff;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #D9564A;
-    transition: 1s;
-    display: flex;
-    border: 0.1vh solid #D9564A;
-    justify-content: center;
-    align-items: center;
-}
-
-.botonLink:hover{
-    background-color: transparent;
-    color: #1f1d1e;
-}
+.botonLink:hover {
+  background-color: transparent;
+  color: #1f1d1e; }
 
 /*DESKTOP*/
-@media screen and (min-width: 769px){
-    
-/*HEADER + NAV*/
-header{
-    height: 10vh; 
-}
-
-nav{
-    width: 50vw;
-}
-
-.linav{
-    padding-right: 1vw; 
-}
-
-.imgLogo{
-    height: 8vh;
-}
-
-/*MAIN*/
-main{
-    padding-top: 10vh;
-}
-
-/*INDEX*/
-
-#gridIndex{
+@media screen and (min-width: 769px) {
+  /*HEADER + NAV*/
+  header {
+    height: 10vh; }
+    header .navbar {
+      width: 100%; }
+      header .navbar img {
+        height: 8vh; }
+      header .navbar li {
+        padding-right: 1vw; }
+  /*MAIN*/
+  main {
+    padding-top: 10vh; }
+  /*INDEX*/
+  #gridIndex {
     grid-template-columns: 50% 50%;
-    grid-template-rows:70vh 30vh 30vh 30vh 10vh 80vh;
-    grid-template-areas: "banner banner"
-                         "texto texto"
-                         "profesor profesor"
-                         "clases didactica"
-                         "botonClases botonClases"
-                         "galeriaI galeriaI";
-}
-
-
-/*QUIENSOY*/
-#gridQuiensoy{ 
+    grid-template-rows: 70vh 30vh 30vh 30vh 10vh 80vh;
+    grid-template-areas: "banner banner" "texto texto" "profesor profesor" "clases didactica" "botonClases botonClases" "galeriaI galeriaI"; }
+  /*QUIENSOY*/
+  #gridQuiensoy {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 700px 700px;
-    grid-template-areas:"titulo titulo titulo" 
-                        "fotoquiensoy texto texto";
-}
-
-.textoQuienSoy{
-    padding: 20px;
-}
-
-/*CLASES*/
-
-#gridClases{
+    grid-template-areas: "titulo titulo titulo"  "fotoquiensoy texto texto"; }
+  .textoQuienSoy {
+    padding: 20px; }
+  /*CLASES*/
+  #gridClases {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:700px 400px;
-    grid-template-areas: "banner banner banner"
-                         "nivel1 nivel2 nivel3";
-}
-
-.texto{
-    font-size: 18px; 
-}
-/*INSTRUMENTOS*/
-
-#gridInstrumentos{
-    grid-template-columns: 50fr 50fr ;
-    grid-template-rows:700px 400px;
-    grid-template-areas: "banner banner "
-                         "cuerdas canto";
-}
-
-/*CONTACTO*/
-
-#gridContacto {
-    grid-template-columns: 50fr 50fr ;
-    grid-template-rows:700px 500px;
-    grid-template-areas: "banner banner "
-                         "mapa formulario";
-}    
-
-
-#whatsapp{
+    grid-template-rows: 700px 400px;
+    grid-template-areas: "banner banner banner" "nivel1 nivel2 nivel3"; }
+  .texto {
+    font-size: 18px; }
+  /*INSTRUMENTOS*/
+  #gridInstrumentos {
+    grid-template-columns: 50fr 50fr;
+    grid-template-rows: 700px 400px;
+    grid-template-areas: "banner banner " "cuerdas canto"; }
+  /*CONTACTO*/
+  #gridContacto {
+    grid-template-columns: 50fr 50fr;
+    grid-template-rows: 700px 500px;
+    grid-template-areas: "banner banner " "mapa formulario"; }
+  #whatsapp {
     right: 30px;
     bottom: 150px;
     height: 50px;
-    width: 50px;
-}
-
-/*FUENTES*/
-
-h1{
-    font-size: 50px;
-}
-
-.texto{
+    width: 50px; }
+  /*FUENTES*/
+  h1 {
+    font-size: 50px; }
+  .texto {
     padding-left: 100px;
-    font-size: 18px; 
-}
-
-
-
-/*FOOTER*/
-footer {
+    font-size: 18px; }
+  /*FOOTER*/
+  footer {
     height: 140px;
-    margin: 0px;
-} 
-
-#div1footer{
-    margin-left: 30px;
-}
- 
-.afooter{
-    height: 40px;
-    width: 40px;
-    margin-left: 10px;
-}
-
-#div2footer{
-    margin-right: 30px;
-    font-size: 15px
-}
-}
+    margin: 0px; }
+    footer #div1footer {
+      margin-left: 30px; }
+      footer #div1footer .afooter {
+        height: 40px;
+        width: 40px;
+        margin-left: 10px; }
+    footer #div2footer {
+      margin-right: 30px;
+      font-size: 15px; } }
 
 /*TABLETS*/
 @media screen and (min-width: 600px) and (max-width: 768px) {
-
-/*HEADER + NAV*/
-header{
-    height: 170px; 
-    padding: 1rem;
-}
-
-nav{
-    width: 40vw;
-}
-
-
-.imgLogo{
-    height: 8vh;
-}
-
-/*MAIN*/
-main{
-    padding-top: 170px;
-}
-
-/*INDEX*/
-
-#gridIndex{
+  /*HEADER + NAV*/
+  header {
+    position: relative;
+    flex-direction: column;
+    justify-items: center;
+    padding: 1rem; }
+    header .navbar {
+      width: 100%; }
+      header .navbar img {
+        height: 5vh;
+        justify-content: center;
+        margin: 0.1vh 0; }
+      header .navbar ul {
+        flex-direction: column;
+        justify-self: center;
+        height: 12vh;
+        line-height: 1em; }
+        header .navbar ul .linknav {
+          padding: 0.5vh 0.5vh;
+          font-size: 1em; }
+          header .navbar ul .linknav:hover {
+            border: 0.1vh solid #A6483F; }
+  /*MAIN*/
+  main {
+    padding-top: 0; }
+  /*INDEX*/
+  #gridIndex {
     grid-template-columns: 100%;
-    grid-template-rows:20vh 20vh 20vh 20vh 20vh 10vh 50vh;
-    grid-template-areas: "banner"
-                         "texto"
-                         "profesor"
-                         "clases"
-                         "didactica"
-                         "botonClases"
-                         "galeriaI";
-}
-
-.textoIndex{
-    padding: 50px;
-}
-
-/*QUIENSOY*/
-
-
-#gridQuiensoy{ 
+    grid-template-rows: 20vh 20vh 20vh 20vh 20vh 10vh 50vh;
+    grid-template-areas: "banner" "texto" "profesor" "clases" "didactica" "botonClases" "galeriaI"; }
+    #gridIndex .textoIndex {
+      padding: 50px; }
+  /*QUIENSOY*/
+  #gridQuiensoy {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 200px 400px;
-    grid-template-areas:"titulo titulo titulo" 
-                        "fotoquiensoy texto texto";
-}
-
-.textoQuienSoy{
-    padding: 20px;
-}
-
-/*CLASES*/
-
-#gridClases{
+    grid-template-areas: "titulo titulo titulo"  "fotoquiensoy texto texto"; }
+  .textoQuienSoy {
+    padding: 20px; }
+  /*CLASES*/
+  #gridClases {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:300px 200px;
-    grid-template-areas: "banner banner banner"
-                         "nivel1 nivel2 nivel3";
-}
-
-/*INSTRUMENTOS*/
-
-#gridInstrumentos{
-    grid-template-columns: 50fr 50fr ;
-    grid-template-rows:300px 200px;
-    grid-template-areas: "banner banner "
-                         "cuerdas canto";
-}
-
-/*CONTACTO*/
-
-#gridContacto {
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows:350px 350px;
-    grid-template-areas: "banner banner "
-                         "mapa formulario";
-}    
-
-#whatsapp{
+    grid-template-rows: 300px 200px;
+    grid-template-areas: "banner banner banner" "nivel1 nivel2 nivel3"; }
+  /*INSTRUMENTOS*/
+  #gridInstrumentos {
+    grid-template-columns: 50fr 50fr;
+    grid-template-rows: 300px 200px;
+    grid-template-areas: "banner banner " "cuerdas canto"; }
+  /*CONTACTO*/
+  #gridContacto {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 350px 350px;
+    grid-template-areas: "banner banner " "mapa formulario"; }
+  #whatsapp {
     right: 30px;
     bottom: 150px;
     height: 50px;
-    width: 50px;
-}
-
-/*FUENTES*/
-
-h1{
-    font-size: 30px;
-}
-
-.texto{
-    font-size: 15px; 
-}
-
-
-
-/*FOOTER*/
-footer {
+    width: 50px; }
+  /*FUENTES*/
+  h1 {
+    font-size: 30px; }
+  .texto {
+    font-size: 15px; }
+  /*FOOTER*/
+  footer {
     height: 180px;
-    margin: 0px;
-} 
-
-#div1footer{
-    margin-top: 30px;
-}
- 
-.afooter{
-    height: 40px;
-    width: 40px;
-    margin-left: 10px;
-}
-
-#div2footer{
-    margin-right: 30px;
-    font-size: 15px
-}
-}
+    margin: 0px; }
+    footer #div1footer {
+      margin-top: 30px; }
+      footer #div1footer .afooter {
+        height: 40px;
+        width: 40px;
+        margin-left: 10px; }
+    footer #div2footer {
+      margin-right: 30px;
+      font-size: 15px; } }
 
 /*MOBILE*/
 @media screen and (min-width: 0px) and (max-width: 599px) {
-    /*HEADER + NAV*/
-header{
-    height: 170px; 
-    padding: 1rem;
-}
-
-nav{
-    width: 40vw;
-}
-
-.imgLogo{
-    height: 8vh;
-}
-
-/*MAIN*/
-main{
-    padding-top: 170px;
-}
-
-/*INDEX*/
-
-#gridIndex{
+  /*HEADER + NAV*/
+  header {
+    position: relative;
+    flex-direction: column;
+    padding: 1rem; }
+    header .navbar {
+      width: 100%; }
+      header .navbar img {
+        height: 5vh;
+        justify-content: center; }
+      header .navbar ul {
+        flex-direction: column;
+        margin-top: 1vh;
+        justify-content: center;
+        height: 12vh; }
+        header .navbar ul .linknav {
+          font-size: 1em;
+          padding: 0 0.3vh; }
+          header .navbar ul .linknav:hover {
+            border: 0.1vh solid #A6483F; }
+  /*MAIN*/
+  main {
+    padding-top: 0; }
+  /*INDEX*/
+  #gridIndex {
     grid-template-columns: 100%;
-    grid-template-rows:20vh 20vh 20vh 20vh 20vh 10vh 50vh;
-    grid-template-areas: "banner"
-                         "texto"
-                         "profesor"
-                         "clases"
-                         "didactica"
-                         "botonClases"
-                         "galeriaI";
-}
-
-.textoIndex{
-    padding: 30px; 
-}
-
-/*QUIENSOY*/
-
-#gridQuiensoy{ 
+    grid-template-rows: 20vh 20vh 20vh 20vh 20vh 10vh 50vh;
+    grid-template-areas: "banner" "texto" "profesor" "clases" "didactica" "botonClases" "galeriaI"; }
+    #gridIndex .textoIndex {
+      padding: 30px; }
+  /*QUIENSOY*/
+  #gridQuiensoy {
     grid-template-columns: 100%;
     grid-template-rows: 200px 400px 200px;
-    grid-template-areas:"titulo"
-                        "fotoquiensoy" 
-                        "texto";
-}
-
-.textoQuienSoy{
-    padding: 10px; 
-}
-
-.galeriaQuienSoy{
-    width: 40%;
-}
-
-/*CLASES*/
-
-#gridClases{
+    grid-template-areas: "titulo" "fotoquiensoy"  "texto"; }
+  .textoQuienSoy {
+    padding: 10px; }
+  .galeriaQuienSoy {
+    width: 40%; }
+  /*CLASES*/
+  #gridClases {
     grid-template-columns: 100%;
-    grid-template-rows:300px 100px 100px 100px;
-    grid-template-areas: "banner"
-                         "nivel1"
-                         "nivel2"
-                         "nivel3";
-}
-
-/*INSTRUMENTOS*/
-
-#gridInstrumentos{
+    grid-template-rows: 300px 100px 100px 100px;
+    grid-template-areas: "banner" "nivel1" "nivel2" "nivel3"; }
+  /*INSTRUMENTOS*/
+  #gridInstrumentos {
     grid-template-columns: 100%;
-    grid-template-rows:300px 200px;
-    grid-template-areas: "banner "
-                         "cuerdas" 
-                         "canto";    
-}
-
-/*CONTACTO*/
-
-#gridContacto {
-    grid-template-columns: 1fr ;
-    grid-template-rows:300px 400px;
-    grid-template-areas: "banner"
-                         "mapa" 
-                         "formulario";
-}    
-
-#whatsapp{
+    grid-template-rows: 300px 200px;
+    grid-template-areas: "banner " "cuerdas"  "canto"; }
+  /*CONTACTO*/
+  #gridContacto {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 400px;
+    grid-template-areas: "banner" "mapa"  "formulario"; }
+  #whatsapp {
     right: 30px;
     bottom: 150px;
     height: 50px;
-    width: 50px;
-}
-
-/*FUENTES*/
-
-h1{
-    font-size: 30px;
-}
-
-.texto{
-    font-size: 11px; 
-}
-
-
-
-/*FOOTER*/
-footer {
+    width: 50px; }
+  /*FUENTES*/
+  h1 {
+    font-size: 30px; }
+  .texto {
+    font-size: 11px; }
+  /*FOOTER*/
+  footer {
     height: 180px;
-    margin: 0px;
-} 
-
-#div1footer{
-    margin-top: 30px;
-}
- 
-.afooter{
-    height: 40px;
-    width: 40px;
-    margin-left: 10px;
-}
-
-#div2footer{
-    margin-right: 30px;
-    font-size: 15px
-}
-}
+    margin: 0px; }
+    footer #div1footer {
+      margin-top: 30px; }
+      footer #div1footer .afooter {
+        height: 40px;
+        width: 40px;
+        margin-left: 10px; }
+    footer #div2footer {
+      margin-right: 30px;
+      font-size: 15px; } }

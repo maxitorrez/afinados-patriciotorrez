@@ -1,0 +1,25 @@
+{
+  "name": "afinados-patriciotorrez-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss sass/afinados.scss CSS/afinados.css", 
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxitorrez/afinados-patriciotorrez.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maxitorrez/afinados-patriciotorrez/issues"
+  },
+  "homepage": "https://github.com/maxitorrez/afinados-patriciotorrez#readme",
+  "description": "",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.15"
+  }
+}
