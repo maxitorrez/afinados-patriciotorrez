@@ -63,24 +63,35 @@
 
             <form action="" class="formulario">
                 <h3>Contactame</h3>
-                <div class="mb-0">
-                    <label for="exampleFormControlInput1" class="form-label textoChico">Nombre</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Ingresá tu nombre">
-                </div>
-                <div class="mb-0">
-                    <label for="exampleFormControlInput1" class="form-label textoChico">Correo electrónico</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Ingresá tu e-mail">
-                </div>
-                <div class="mb-0">
-                    <label for="exampleFormControlTextarea1" class="form-label textoChico">Escribime tu
-                        consulta</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-danger">Enviar</button>
-                </div>
+                <label for="text" id="Nombre" class="texto mb-1">Nombre y apellido</label>
+                <input type="text" placeholder="Ingresá tu nombre" id="Nombre" class="mb-3 caja">
+
+                <label for="text" id="correo" class="texto mb-1">Correo Electrónico</label>
+                <input type="text" placeholder="Ingresá tu e-mail" id="correo" class="mb-3 caja">
+
+                <label for="Instrumento" id="select" class="texto mb-1">Instrumento</label>
+                <select name="select" class="mb-3">
+                    <option value="select">Seleccionar</option>
+                    <option value="Guitarra">Guitarra</option>
+                    <option value="Bajo">Bajo</option>
+                    <option value="Piano">Piano</option>
+                    <option value="Canto">Canto</option>
+                </select>
+
+                <label for="Nivel" id="select" class="texto mb-1">Nivel</label>
+                <select name="select" class="mb-3">
+                    <option value="select">Seleccionar</option>
+                    <option value="Nivel Inicial">Nivel inicial</option>
+                    <option value="Nivel Intermedio">Nivel Intermedio</option>
+                    <option value="Nivel Avanzado">Nivel Avanzado</option>
+                </select>
+
+                <label for="exampleFormControlTextarea1" class="texto mb-1">Comentario</label>
+                <textarea name="" id="" cols="70" rows="5" class="mb-3"></textarea>
+
+                <input type="submit" class="botonLink">
+
+
             </form>
 
 

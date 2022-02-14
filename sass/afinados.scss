@@ -1,12 +1,11 @@
 $sombraImg: drop-shadow(0 0.2vh 0.5vh #2F2A26);
 $colorTexto: #1f1d1e;
-$fuente: 'Montserrat', sans-serif;
 
-@mixin banners($imagen){
+@mixin banners($background){
     grid-area: banner;
     display: flex;
-    flex-direction: column;
-    background-image: $imagen;
+    justify-content: center;
+    background-image: $background;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -102,23 +101,29 @@ main{
     .textoIndex{
         color: #1f1d1e;
         grid-area: texto;
+        text-align: center;
+        text-justify: center;
         display: flex;
-        flex-direction: column;
-        display: flex;
-        align-self: center;
-        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10vh;
     }
 
     .profesor{
         grid-area: profesor;
+        text-align: center;
+        text-justify: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin: 0 10vh;
     }
 
     .clasesIndex{
         grid-area: clases;
+        text-align: center;
+        text-justify: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -127,6 +132,8 @@ main{
 
     .didactica{
         grid-area: didactica;
+        text-align: center;
+        text-justify: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -144,6 +151,8 @@ main{
 
     .galeriaIndex{
         grid-area: galeriaI;
+        text-align: center;
+        text-justify: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -154,7 +163,7 @@ main{
             align-self: center;
             justify-self: center;
             transition: 1s;
-            height: 80%;
+            width: 80%;
 
             &:hover{
                 filter: $sombraImg;
@@ -164,8 +173,9 @@ main{
     }
     .imgIndex{
         display: flex;
-        width: 5vw;
+        width: 7vw;
         filter: $sombraImg;
+        margin: 0 0 2vh 0;
     }
 }
 
@@ -182,9 +192,9 @@ main{
     align-content: center;
 
     .tituloQuienSoy{
-        @include banners(url(../IMG/bannerquiensoy.png));
+        @include banners(url(../IMG/bannerquiensoy.png))
     }
-
+    
     .textoQuienSoy{
         grid-area: texto;
         display:flex ;
@@ -194,20 +204,16 @@ main{
         background-color: #D15D46;
     }
     
-    .galeriaQuienSoy{
+    .fotoProf{
         grid-area: fotoquiensoy;
         display: flex;
         align-self: center;
         justify-self: center;
-        transition: 1s;
-        height: 80%;
-
-        &:hover{
-            filter: $sombraImg;
-        }
+        filter: $sombraImg;
+        height: 30vh;
     }
-    
 }
+
 
 
 /*CLASES*/
@@ -223,7 +229,7 @@ main{
     align-content: center;
 
     .backgroundClases{
-        @include banners(url(../IMG/bannerclases.png));
+        @include banners(url(../IMG/bannerclases.png))
     }
     
     .nivel1{
@@ -239,12 +245,30 @@ main{
     
     .nivel2{
         grid-area: nivel2;
-        @extend .nivel1
+        @extend .nivel1;
     }
     
     .nivel3{
         grid-area: nivel3;
-        @extend .nivel1
+        @extend .nivel1;
+    }
+
+    .desc1{
+        grid-area: desc1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .desc2{
+        grid-area: desc2;
+        @extend .desc1;
+    }
+
+    .desc3{
+        grid-area: desc3;
+        @extend .desc1;
     }
 }
 
@@ -255,7 +279,7 @@ main{
     display: grid;
     height: 100%;
     width: 100%;
-    background-color: #fff;
+    background-color: #ffff;
     row-gap: 0px;
     justify-content: space-around;
     justify-content: center;
@@ -268,6 +292,7 @@ main{
     .cuerdas{
         grid-area: cuerdas;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 50px; 
@@ -278,7 +303,13 @@ main{
     
     .canto{
         grid-area: canto ;
-        @extend .cuerdas
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px; 
+        margin:50px;
+        background-color: #D15D46;
+        line-height: 1.5;
     }
 }
 
@@ -295,24 +326,23 @@ main{
     justify-content: center;
     align-content: center;
 
-    
     .backgroundContacto{
         @include banners(url(../IMG/bannercontacto.png));
     }
-
+    
     .mapa{
         grid-area: mapa;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 50px; 
-        margin:50px;
+        justify-self: center;
+        align-self: center;
+        width: 80%;
+        height: 80%;
+        padding: 2vh;
         background-color: #D15D46;
         line-height: 1.5;
     }
-
-    .formulario{
     
+    .formulario{
         grid-area: formulario;
         display: flex;
         flex-direction: column;
@@ -320,11 +350,23 @@ main{
         align-items: center;
         padding: 50px; 
         margin:50px;
-        background-color: #D15D46;
         line-height: 1.5;
-    }
 
+        textarea, .caja, select{
+        border: 2px solid #A6483F;
+        background-color: #ffff;
+        width: 100%;
+        transition: 1s;
+            
+            &:focus{
+                outline: none;
+                border:none;
+                border-bottom: 2px solid #A6483F;
+            }
+        }
+    }
 }    
+
 
 
 #whatsapp{
@@ -335,7 +377,7 @@ main{
 /*FUENTES*/
 
 h1{
-    font-family: $fuente;
+    font-family: 'Montserrat', sans-serif;
     color: #A6483F;
     line-height: 1.5;
     display: flex;
@@ -348,15 +390,14 @@ h1{
 
 h3{
     color: #A6483F;
-    font-family: $fuente;  
+    font-family: 'Montserrat', sans-serif;  
 }
 
 .texto{
     color: $colorTexto;
-    font-family: $fuente;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.5;
 }
-
 
 /*FOOTER*/
 footer {
@@ -391,20 +432,19 @@ footer {
 .botonLink{
     text-decoration: none;
     color: #ffff;
-    font-family: $fuente;
+    font-family: 'Montserrat', sans-serif;
     background-color: #D9564A;
     transition: 1s;
     display: flex;
     border: 0.1vh solid #D9564A;
     justify-content: center;
     align-items: center;
-
-    &:hover{
-        background-color: transparent;
-        color: #1f1d1e;
-    }
 }
 
+.botonLink:hover{
+    background-color: transparent;
+    color: #1f1d1e;
+}
 
 /*DESKTOP*/
 @media screen and (min-width: 769px){
@@ -436,7 +476,7 @@ main{
 
 #gridIndex{
     grid-template-columns: 50% 50%;
-    grid-template-rows:70vh 30vh 30vh 30vh 10vh 80vh;
+    grid-template-rows:70vh 30vh 30vh 30vh 20vh 80vh;
     grid-template-areas: "banner banner"
                          "texto texto"
                          "profesor profesor"
@@ -449,7 +489,7 @@ main{
 /*QUIENSOY*/
 #gridQuiensoy{ 
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 700px 700px;
+    grid-template-rows: 70vh 70vh;
     grid-template-areas:"banner banner banner" 
                         "fotoquiensoy texto texto";
 
@@ -458,25 +498,26 @@ main{
                         }
 }
 
-
 /*CLASES*/
 
 #gridClases{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:700px 400px;
-    grid-template-areas: "banner banner banner"
-                         "nivel1 nivel2 nivel3";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:70vh 40vh 40vh 40vh;
+    grid-gap: 2vh;
+    grid-template-areas: "banner banner"
+                         "nivel1 desc1"
+                         "nivel2 desc2"
+                         "nivel3 desc3";
 
-                         .texto{
-                            font-size: 18px; 
-                        }
+
 }
+
 
 /*INSTRUMENTOS*/
 
 #gridInstrumentos{
     grid-template-columns: 50fr 50fr ;
-    grid-template-rows:700px 400px;
+    grid-template-rows:70vh 40vh;
     grid-template-areas: "banner banner "
                          "cuerdas canto";
 }
@@ -485,7 +526,7 @@ main{
 
 #gridContacto {
     grid-template-columns: 50fr 50fr ;
-    grid-template-rows:700px 500px;
+    grid-template-rows:70vh 70vh;
     grid-template-areas: "banner banner "
                          "mapa formulario";
 }    
@@ -505,7 +546,6 @@ h1{
 }
 
 .texto{
-    padding-left: 100px;
     font-size: 18px; 
 }
 
@@ -583,7 +623,7 @@ main{
 
 #gridIndex{
     grid-template-columns: 100%;
-    grid-template-rows:20vh 20vh 20vh 20vh 20vh 10vh 50vh;
+    grid-template-rows:30vh 20vh 20vh 20vh 20vh 10vh 50vh;
     grid-template-areas: "banner"
                          "texto"
                          "profesor"
@@ -604,30 +644,31 @@ main{
 
 #gridQuiensoy{ 
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 200px 400px;
-    grid-template-areas:"titulo titulo titulo" 
+    grid-template-rows: 30vh 60vh;
+    grid-template-areas:"banner banner banner" 
                         "fotoquiensoy texto texto";
-
-                        .textoQuienSoy{
-                            padding: 20px;
-                        }
 }
 
+.textoQuienSoy{
+    padding: 20px;
+}
 
 /*CLASES*/
 
 #gridClases{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:300px 200px;
-    grid-template-areas: "banner banner banner"
-                         "nivel1 nivel2 nivel3";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:30vh 30vh 30vh 30vh;
+    grid-template-areas: "banner banner"
+                         "nivel1 desc1"
+                         "nivel2 desc2"
+                         "nivel3 desc3";
 }
 
 /*INSTRUMENTOS*/
 
 #gridInstrumentos{
     grid-template-columns: 50fr 50fr ;
-    grid-template-rows:300px 200px;
+    grid-template-rows:30vh 40vh;
     grid-template-areas: "banner banner "
                          "cuerdas canto";
 }
@@ -635,10 +676,11 @@ main{
 /*CONTACTO*/
 
 #gridContacto {
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows:350px 350px;
-    grid-template-areas: "banner banner "
-                         "mapa formulario";
+    grid-template-columns: 1fr;
+    grid-template-rows:30vh 80vh 40vh;
+    grid-template-areas: "banner"
+                         "formulario"
+                         "mapa";
 }    
 
 #whatsapp{
@@ -749,37 +791,36 @@ main{
 
 #gridQuiensoy{ 
     grid-template-columns: 100%;
-    grid-template-rows: 200px 400px 200px;
-    grid-template-areas:"titulo"
+    grid-template-rows: 20vh 40vh 20vh;
+    grid-template-areas:"banner"
                         "fotoquiensoy" 
                         "texto";
-
-                        .textoQuienSoy{
-                            padding: 10px; 
-                        }
-                        
-                        .galeriaQuienSoy{
-                            width: 40%;
-                        }
 }
 
+.textoQuienSoy{
+    padding: 10px; 
+}
+
+.galeriaQuienSoy{
+    width: 40%;
+}
 
 /*CLASES*/
 
 #gridClases{
-    grid-template-columns: 100%;
-    grid-template-rows:300px 100px 100px 100px;
-    grid-template-areas: "banner"
-                         "nivel1"
-                         "nivel2"
-                         "nivel3";
+    grid-template-columns: 50% 50%;
+    grid-template-rows:20vh 30vh 30vh 30vh;
+    grid-template-areas: "banner banner"
+                         "nivel1 desc1"
+                         "nivel2 desc2"
+                         "nivel3 desc3";
 }
 
 /*INSTRUMENTOS*/
 
 #gridInstrumentos{
     grid-template-columns: 100%;
-    grid-template-rows:300px 200px;
+    grid-template-rows:20vh 30vh 30vh;
     grid-template-areas: "banner "
                          "cuerdas" 
                          "canto";    
@@ -789,10 +830,10 @@ main{
 
 #gridContacto {
     grid-template-columns: 1fr ;
-    grid-template-rows:300px 400px;
+    grid-template-rows:20vh 80vh 40vh;
     grid-template-areas: "banner"
-                         "mapa" 
-                         "formulario";
+                         "formulario" 
+                         "mapa";
 }    
 
 #whatsapp{
@@ -809,7 +850,7 @@ h1{
 }
 
 .texto{
-    font-size: 11px; 
+    font-size: 13px; 
 }
 
 
