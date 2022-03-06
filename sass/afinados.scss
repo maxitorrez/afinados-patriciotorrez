@@ -1,6 +1,7 @@
 $sombraImg: drop-shadow(0 0.2vh 0.5vh #2F2A26);
 $colorTexto: #1f1d1e;
 
+
 @mixin banners($background){
     grid-area: banner;
     display: flex;
@@ -231,45 +232,31 @@ main{
     .backgroundClases{
         @include banners(url(../IMG/bannerclases.png))
     }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #D15D46;
+        border-color: #D15D46;
+        transition: 1s;
+
+        &:hover{
+            color: #221E24;
+            background-color: transparent;
+        }
+    }
     
     .nivel1{
         grid-area: nivel1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 50px; 
-        margin: 50px;
-        background-color: #D15D46;
-        line-height: 1.5;
     }
     
     .nivel2{
         grid-area: nivel2;
-        @extend .nivel1;
     }
     
     .nivel3{
         grid-area: nivel3;
-        @extend .nivel1;
     }
 
-    .desc1{
-        grid-area: desc1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-    }
-
-    .desc2{
-        grid-area: desc2;
-        @extend .desc1;
-    }
-
-    .desc3{
-        grid-area: desc3;
-        @extend .desc1;
-    }
 }
 
 
@@ -288,28 +275,41 @@ main{
     .backgroundInstrumentos{
         @include banners(url(../IMG/bannerinstrumentos.png));
     }
-     
-    .cuerdas{
-        grid-area: cuerdas;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 50px; 
-        margin:50px;
+
+    .btn-primary {
+        color: #fff;
         background-color: #D15D46;
-        line-height: 1.5;
+        border-color: #D15D46;
+        transition: 1s;
+
+        &:hover{
+            color: #221E24;
+            background-color: transparent;
+        }
     }
-    
-    .canto{
-        grid-area: canto ;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 50px; 
-        margin:50px;
-        background-color: #D15D46;
-        line-height: 1.5;
+     
+    .carta1{
+        grid-area: carta1;
+    }
+
+    .carta2{
+        grid-area: carta2;
+    }
+
+    .carta3{
+        grid-area: carta3;
+    }
+
+    .carta4{
+        grid-area: carta4;
+    }
+
+    .carta5{
+        grid-area: carta5;
+    }
+
+    .carta6{
+        grid-area: carta6;
     }
 }
 
@@ -501,14 +501,23 @@ main{
 /*CLASES*/
 
 #gridClases{
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows:70vh 40vh 40vh 40vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:70vh 70vh ;
     grid-gap: 2vh;
-    grid-template-areas: "banner banner"
-                         "nivel1 desc1"
-                         "nivel2 desc2"
-                         "nivel3 desc3";
+    grid-template-areas: "banner banner banner"
+                         "nivel1 nivel2 nivel3";
 
+                        .nivel1{
+                            margin: 0 0 15vh 2vh;
+                        }
+
+                        .nivel2{
+                            margin: 0 0 8vh 2vh;
+                        }
+
+                        .nivel3{
+                            margin: 0 0 5vh 2vh;
+                        }
 
 }
 
@@ -516,17 +525,42 @@ main{
 /*INSTRUMENTOS*/
 
 #gridInstrumentos{
-    grid-template-columns: 50fr 50fr ;
-    grid-template-rows:70vh 40vh;
-    grid-template-areas: "banner banner "
-                         "cuerdas canto";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:70vh 55vh 55vh;
+    grid-template-areas: "banner banner banner"
+                         "carta1 carta2 carta3"
+                         "carta4 carta5 carta6";
+
+                        .carta1{
+                            margin: 7vh 0 7vh 7vh;
+                        }
+
+                        .carta2{
+                            margin: 7vh 0 7vh 7vh;
+                        }
+
+                        .carta3{
+                            margin: 7vh 0 7vh 7vh;
+                        }
+
+                        .carta4{
+                            margin: 7vh 0 7vh 7vh;;
+                        }
+
+                        .carta5{
+                            margin: 7vh 0 7vh 7vh;
+                        }
+
+                        .carta6{
+                            margin: 7vh 0 7vh 7vh;
+                        }
 }
 
 /*CONTACTO*/
 
 #gridContacto {
     grid-template-columns: 50fr 50fr ;
-    grid-template-rows:70vh 70vh;
+    grid-template-rows:70vh 80vh;
     grid-template-areas: "banner banner "
                          "mapa formulario";
 }    
@@ -656,21 +690,31 @@ main{
 /*CLASES*/
 
 #gridClases{
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows:30vh 30vh 30vh 30vh;
-    grid-template-areas: "banner banner"
-                         "nivel1 desc1"
-                         "nivel2 desc2"
-                         "nivel3 desc3";
+    grid-template-columns: 1fr;
+    grid-template-rows:30vh 45vh 55vh 60vh;
+    grid-template-areas: "banner"
+                         "nivel1"
+                         "nivel2"
+                         "nivel3";
+
+                         .nivel1, .nivel2, .nivel3{
+                             margin: 0 0 2vh 20vw;
+                         }
 }
 
 /*INSTRUMENTOS*/
 
 #gridInstrumentos{
     grid-template-columns: 50fr 50fr ;
-    grid-template-rows:30vh 40vh;
+    grid-template-rows:30vh 45vh 45vh 45vh;
     grid-template-areas: "banner banner "
-                         "cuerdas canto";
+                         "carta1 carta2"
+                         "carta3 carta4"
+                         "carta5 carta6";
+
+                        .carta1, .carta2, .carta3, .carta4, .carta5, .carta6{
+                            margin: 2vh;
+                        }
 }
 
 /*CONTACTO*/
@@ -808,22 +852,34 @@ main{
 /*CLASES*/
 
 #gridClases{
-    grid-template-columns: 50% 50%;
-    grid-template-rows:20vh 30vh 30vh 30vh;
-    grid-template-areas: "banner banner"
-                         "nivel1 desc1"
-                         "nivel2 desc2"
-                         "nivel3 desc3";
+    grid-template-columns: 100%;
+    grid-template-rows:20vh 45vh 55vh 60vh;
+    grid-template-areas: "banner"
+                         "nivel1"
+                         "nivel2"
+                         "nivel3";
+
+                         .nivel1, .nivel2, .nivel3{
+                             margin: 0 0 2vh 20vw;
+                         }
 }
 
 /*INSTRUMENTOS*/
 
 #gridInstrumentos{
     grid-template-columns: 100%;
-    grid-template-rows:20vh 30vh 30vh;
-    grid-template-areas: "banner "
-                         "cuerdas" 
-                         "canto";    
+    grid-template-rows:20vh 45vh 45vh 45vh 45vh 45vh 45vh;
+    grid-template-areas: "banner"
+                         "carta1" 
+                         "carta2"
+                         "carta3"
+                         "carta4"
+                         "carta5"
+                         "carta6";    
+
+                        .carta1, .carta2, .carta3, .carta4, .carta5, .carta6{
+                            margin: 2vh 10vw;
+                        }
 }
 
 /*CONTACTO*/
