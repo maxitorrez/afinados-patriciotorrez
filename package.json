@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "node-sass --include-path scss sass/afinados.scss CSS/afinados.css", 
-    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+    "build-css": "sass sass/afinados.scss CSS/afinados.css --no-source-map",
+    "watch-css": "sass --watch sass/afinados.scss CSS/afinados.css --no-source-map"
   },
   "author": "",
   "license": "ISC",
@@ -17,9 +16,8 @@
     "url": "https://github.com/maxitorrez/afinados-patriciotorrez/issues"
   },
   "homepage": "https://github.com/maxitorrez/afinados-patriciotorrez#readme",
-  "description": "",
+  "description": "Sitio de Afinados Escuela Musical",
   "devDependencies": {
-    "node-sass": "^7.0.1",
-    "nodemon": "^2.0.15"
+    "sass": "^1.80.0"
   }
 }
