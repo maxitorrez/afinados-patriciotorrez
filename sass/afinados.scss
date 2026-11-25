@@ -1,935 +1,249 @@
-$sombraImg: drop-shadow(0 0.2vh 0.5vh #2F2A26);
-$colorTexto: #1f1d1e;
+/* =========================================================
+   Afinados Escuela Musical — estilos
+   Paleta "escenario": fondo oscuro, texto crema, acento coral (del logo)
+   ========================================================= */
 
-
-@mixin banners($background){
-    grid-area: banner;
-    display: flex;
-    justify-content: center;
-    background-image: $background;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+:root {
+  --bg: #121110;
+  --bg-elev: #1b1917;
+  --line: #2e2a27;
+  --text: #f3ede4;
+  --muted: #b3aaa0;
+  --accent: #e0694f;        /* coral del logo, apenas más luminoso para contraste AA */
+  --accent-ink: #1a0f0c;
+  --radius: 14px;
+  --max: 1120px;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-*{
-    margin: 0;
-    padding: 0;
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1.0625rem/1.65 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; margin: 0 0 .5em; letter-spacing: -.01em; }
+h1 { font-size: clamp(2.4rem, 6vw, 4.25rem); font-weight: 700; }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 650; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+p { margin: 0 0 1em; }
+
+.container { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+.section { padding-block: clamp(3.5rem, 8vw, 6rem); }
+.eyebrow {
+  display: inline-block; margin-bottom: .75rem;
+  color: var(--accent); font-size: .8rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+}
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 46ch; }
+.muted { color: var(--muted); }
+
+/* ---------- Accesibilidad ---------- */
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  background: var(--accent); color: var(--accent-ink);
+  padding: .6rem 1rem; border-radius: 8px; font-weight: 600; text-decoration: none;
+}
+.skip-link:focus { top: 1rem; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
-body{
-    background-color: #ffff;
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .85rem 1.5rem; border-radius: 999px; border: 1.5px solid transparent;
+  font: 600 1rem var(--font-body); text-decoration: none; cursor: pointer;
+  transition: background-color .2s, color .2s, border-color .2s, transform .2s;
+}
+.btn--primary { background: var(--accent); color: var(--accent-ink); }
+.btn--primary:hover { background: #f07c62; transform: translateY(-1px); }
+.btn--ghost { border-color: var(--line); color: var(--text); }
+.btn--ghost:hover { border-color: var(--text); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgb(18 17 16 / .85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; min-height: 72px; }
+.nav__logo img { width: 150px; }
+.nav__toggle {
+  display: none; background: none; border: 1px solid var(--line); color: var(--text);
+  border-radius: 10px; padding: .5rem .7rem; font: 600 .9rem var(--font-body); cursor: pointer;
+}
+.nav__list { display: flex; gap: .25rem; list-style: none; margin: 0; padding: 0; }
+.nav__list a {
+  display: block; padding: .5rem .9rem; border-radius: 999px;
+  color: var(--muted); font-size: .95rem; font-weight: 500; text-decoration: none;
+  transition: color .2s, background-color .2s;
+}
+.nav__list a:hover { color: var(--text); }
+.nav__list a[aria-current="page"] { color: var(--text); background: var(--bg-elev); }
+
+@media (max-width: 760px) {
+  .nav__toggle { display: block; }
+  .nav__list {
+    display: none; position: absolute; inset: 72px 0 auto 0;
+    flex-direction: column; padding: .75rem 1.25rem 1.25rem;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+  }
+  .nav__list.is-open { display: flex; }
+  .nav__list a { padding: .8rem 1rem; font-size: 1.05rem; }
 }
 
-/*HEADER+MENU*/
+/* ---------- Hero / banners ---------- */
+.hero {
+  position: relative; isolation: isolate;
+  min-height: clamp(420px, 70vh, 640px);
+  display: grid; align-items: end;
+  padding-block: 4rem;
+}
+.hero--small { min-height: clamp(260px, 38vh, 360px); padding-block: 3rem; }
+.hero__bg {
+  position: absolute; inset: 0; z-index: -1;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(to top, var(--bg) 2%, rgb(18 17 16 / .55) 45%, rgb(18 17 16 / .2));
+}
+.hero h1 { max-width: 14ch; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
 
-header{
-    background-color: #1f1d1e;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    box-shadow: 0 0 0.7vh 0;
-    box-shadow: #1f1d1e/20%;
-    z-index: 10;
-    position: fixed;
+/* ---------- Bloques de inicio ---------- */
+.split {
+  display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+}
+.split__img { width: min(100%, 360px); margin-inline: auto; }
+@media (max-width: 760px) { .split { grid-template-columns: 1fr; } }
 
-    .navbar{
-        width: 100%;
+.features { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.feature {
+  display: flex; gap: 1.25rem; align-items: center;
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.25rem;
+}
+.feature img { width: 96px; flex-shrink: 0; }
+.feature p { margin: 0; color: var(--muted); }
 
-        img{
-            display: flex;
-            padding-left: 7vw;
-        }        
-
-        .collapse{
-            flex-grow:0;
-        }
-
-        ul{
-            font-family: 'Montserrat', sans-serif;
-            list-style-type: none;
-            color: #D9564A;
-            height: 8vh;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: space-evenly;
-            padding-right: 7vw; 
-
-            li{
-                display: flex;
-                text-decoration: none;
-
-                a{
-                    color: #D9564A;
-                    text-decoration: none;
-                    background-color: transparent;
-                    border:0.1vh solid transparent;
-                    transition: 1s;
-                    &:hover{
-                        color:#A6483F;
-                    
-                    }
-                } 
-            }
-        }
-    }
+/* Galería deslizable (sin JS) */
+.gallery {
+  display: grid; grid-auto-flow: column; grid-auto-columns: min(80%, 420px);
+  gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding-bottom: 1rem; scrollbar-color: var(--line) transparent;
+}
+.gallery__item {
+  position: relative; margin: 0; scroll-snap-align: start;
+  border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3;
+}
+.gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.gallery__item:hover img { transform: scale(1.04); }
+.gallery__item figcaption {
+  position: absolute; inset: auto 0 0 0; padding: 2.5rem 1.1rem 1rem;
+  background: linear-gradient(to top, rgb(0 0 0 / .8), transparent);
+  font: 600 1.15rem var(--font-display);
 }
 
-/*MAIN*/
-main{
-    background-color:  #ffff;
+.cta {
+  text-align: center; background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.5); padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+}
+.cta .lead { margin-inline: auto; }
+
+/* ---------- Tarjetas (clases / instrumentos) ---------- */
+.cards { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.card {
+  display: flex; flex-direction: column;
+  background: var(--bg-elev); border: 1px solid var(--line);
+  border-radius: var(--radius); overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+.card:hover { border-color: #4a433e; transform: translateY(-3px); }
+.card__img { aspect-ratio: 25 / 19; width: 100%; object-fit: cover; }
+.card__body { display: flex; flex-direction: column; flex: 1; padding: 1.5rem; }
+.card__body p { color: var(--muted); }
+.card__body .btn { margin-top: auto; align-self: flex-start; }
+.card--featured { border-color: var(--accent); }
+
+.level-num {
+  font: 700 3rem/1 var(--font-display); color: var(--accent); margin-bottom: .5rem;
+}
+.checklist { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+.checklist li { position: relative; padding: .4rem 0 .4rem 1.6rem; border-bottom: 1px solid var(--line); }
+.checklist li:last-child { border-bottom: 0; }
+.checklist li::before {
+  content: ""; position: absolute; left: 0; top: .95rem;
+  width: .55rem; height: .55rem; border-radius: 50%; background: var(--accent);
 }
 
-/*INDEX*/
+/* ---------- Contacto ---------- */
+.contact { display: grid; gap: 2rem; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+@media (max-width: 860px) { .contact { grid-template-columns: 1fr; } }
+.form {
+  display: grid; gap: 1.1rem; background: var(--bg-elev);
+  border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.25rem, 4vw, 2rem);
+}
+.form__row { display: grid; gap: 1.1rem; grid-template-columns: 1fr 1fr; }
+@media (max-width: 560px) { .form__row { grid-template-columns: 1fr; } }
+.field { display: grid; gap: .4rem; }
+.field label { font-size: .9rem; font-weight: 600; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: .8rem .9rem; border-radius: 10px;
+  border: 1px solid #3d3733; background: var(--bg); color: var(--text);
+  font: inherit; font-size: 1rem;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgb(224 105 79 / .3); }
+.field textarea { resize: vertical; min-height: 130px; }
+.contact__info { display: grid; gap: 1.25rem; align-content: start; }
+.contact__info address { font-style: normal; }
+.contact__info a { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.map { width: 100%; aspect-ratio: 4 / 3; border: 0; border-radius: var(--radius); filter: grayscale(.6) invert(.9) hue-rotate(180deg); }
 
-#gridIndex{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #ffff;
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--line); padding-block: 2.5rem; margin-top: 2rem; color: var(--muted); font-size: .95rem; }
+.footer__grid { display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; justify-content: space-between; align-items: center; }
+.footer__grid address { font-style: normal; }
+.footer__grid p { margin: 0; }
+.footer__grid a { color: var(--text); }
+.social { display: flex; gap: .75rem; }
+.social a {
+  display: grid; place-items: center; width: 44px; height: 44px;
+  border: 1px solid var(--line); border-radius: 50%; transition: border-color .2s;
+}
+.social a:hover { border-color: var(--accent); }
+.social img { width: 20px; height: 20px; }
 
-    .backgroundIndex{
-        @include banners(url(../IMG/bannerindex.png));
-    }
+/* ---------- WhatsApp flotante ---------- */
+.whatsapp {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 60;
+  width: 60px; height: 60px; display: grid; place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgb(0 0 0 / .4);
+  transition: transform .2s;
+}
+.whatsapp:hover { transform: scale(1.06); }
+.whatsapp img { width: 60px; height: 60px; }
 
-    .textoIndex{
-        color: #1f1d1e;
-        grid-area: texto;
-        text-align: center;
-        text-justify: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 10vh;
-    }
-
-    .profesor{
-        grid-area: profesor;
-        text-align: center;
-        text-justify: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0 10vh;
-    }
-
-    .clasesIndex{
-        grid-area: clases;
-        text-align: center;
-        text-justify: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .didactica{
-        grid-area: didactica;
-        text-align: center;
-        text-justify: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .botonClases{
-        grid-area: botonClases;
-        display: flex;
-        flex-direction: column;
-        justify-self: center;
-        align-self: center;
-        padding: 1vh;
-    }
-
-    .galeriaIndex{
-        grid-area: galeriaI;
-        text-align: center;
-        text-justify: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .galeriaI{
-            display: flex;
-            align-self: center;
-            justify-self: center;
-            transition: 1s;
-            width: 80%;
-
-            &:hover{
-                filter: $sombraImg;
-            }
-        }
-
-    }
-    .imgIndex{
-        display: flex;
-        width: 7vw;
-        filter: $sombraImg;
-        margin: 0 0 2vh 0;
-    }
+/* ---------- Animación de entrada (respeta reduced motion) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.is-visible { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
-
-/*QUIENSOY*/
-#gridQuiensoy{ 
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #ffff ;
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-
-    .tituloQuienSoy{
-        @include banners(url(../IMG/bannerquiensoy.png))
-    }
-    
-    .textoQuienSoy{
-        grid-area: texto;
-        display:flex ;
-        flex-direction: column;
-        justify-content: center;
-        align-self: center;
-        background-color: #D15D46;
-    }
-    
-    .fotoProf{
-        grid-area: fotoquiensoy;
-        display: flex;
-        align-self: center;
-        justify-self: center;
-        filter: $sombraImg;
-        height: 30vh;
-    }
-}
-
-
-
-/*CLASES*/
-
-#gridClases{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #ffff;
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-
-    .backgroundClases{
-        @include banners(url(../IMG/bannerclases.png))
-    }
-
-    .btn-primary {
-        color: #fff;
-        background-color: #D15D46;
-        border-color: #D15D46;
-        transition: 1s;
-
-        &:hover{
-            color: #221E24;
-            background-color: transparent;
-        }
-    }
-    
-    .nivel1{
-        grid-area: nivel1;
-    }
-    
-    .nivel2{
-        grid-area: nivel2;
-    }
-    
-    .nivel3{
-        grid-area: nivel3;
-    }
-
-}
-
-
-/*INSTRUMENTOS*/
-
-#gridInstrumentos{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #ffff;
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center; 
-
-    .backgroundInstrumentos{
-        @include banners(url(../IMG/bannerinstrumentos.png));
-    }
-
-    .btn-primary {
-        color: #fff;
-        background-color: #D15D46;
-        border-color: #D15D46;
-        transition: 1s;
-
-        &:hover{
-            color: #221E24;
-            background-color: transparent;
-        }
-    }
-     
-    .carta1{
-        grid-area: carta1;
-    }
-
-    .carta2{
-        grid-area: carta2;
-    }
-
-    .carta3{
-        grid-area: carta3;
-    }
-
-    .carta4{
-        grid-area: carta4;
-    }
-
-    .carta5{
-        grid-area: carta5;
-    }
-
-    .carta6{
-        grid-area: carta6;
-    }
-}
-
-
-/*CONTACTO*/
-
-#gridContacto {
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #ffff;
-    row-gap: 0px;
-    justify-content: space-around;
-    justify-content: center;
-    align-content: center;
-
-    .backgroundContacto{
-        @include banners(url(../IMG/bannercontacto.png));
-    }
-    
-    .mapa{
-        grid-area: mapa;
-        display: flex;
-        justify-self: center;
-        align-self: center;
-        width: 80%;
-        height: 80%;
-        padding: 2vh;
-        background-color: #D15D46;
-        line-height: 1.5;
-    }
-    
-    .formulario{
-        grid-area: formulario;
-        display: flex;
-        flex-direction: column;
-        justify-items: start;
-        align-items: center;
-        padding: 50px; 
-        margin:50px;
-        line-height: 1.5;
-
-        textarea, .caja, select{
-        border: 2px solid #A6483F;
-        background-color: #ffff;
-        width: 100%;
-        transition: 1s;
-            
-            &:focus{
-                outline: none;
-                border:none;
-                border-bottom: 2px solid #A6483F;
-            }
-        }
-    }
-}    
-
-
-
-#whatsapp{
-    position: fixed;
-}
-
-
-/*FUENTES*/
-
-h1{
-    font-family: 'Montserrat', sans-serif;
-    color: #A6483F;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-shadow: #2F2A26 0.1em 0.1em 0.2em;
-    font-weight: 700;
-}
-
-h3{
-    color: #A6483F;
-    font-family: 'Montserrat', sans-serif;  
-}
-
-.texto{
-    color: $colorTexto;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
-}
-
-/*FOOTER*/
-footer {
-    background-color: #221E24;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    #div1footer{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        justify-content: center;
-        align-items: center;
-
-        .afooter{
-            display: flex;
-        }
-    }
-
-    #div2footer{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        line-height: 2;
-        font-family: 'Montserrat', sans-serif;
-        color: #F8E0BC; 
-    }
-
-} 
-
-.botonLink{
-    text-decoration: none;
-    color: #ffff;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #D9564A;
-    transition: 1s;
-    display: flex;
-    border: 0.1vh solid #D9564A;
-    justify-content: center;
-    align-items: center;
-}
-
-.botonLink:hover{
-    background-color: transparent;
-    color: #1f1d1e;
-}
-
-/*DESKTOP*/
-@media screen and (min-width: 769px){
-    
-/*HEADER + NAV*/
-header{
-    height: 10vh; 
-
-    .navbar{
-        width: 100%;
-
-        img{
-            height: 8vh;
-        }
-        
-        li{
-            padding-right: 1vw; 
-        }
-    }
-
-}
-
-/*MAIN*/
-main{
-    padding-top: 10vh;
-}
-
-/*INDEX*/
-
-#gridIndex{
-    grid-template-columns: 50% 50%;
-    grid-template-rows:70vh 30vh 30vh 30vh 20vh 80vh;
-    grid-template-areas: "banner banner"
-                         "texto texto"
-                         "profesor profesor"
-                         "clases didactica"
-                         "botonClases botonClases"
-                         "galeriaI galeriaI";
-}
-
-
-/*QUIENSOY*/
-#gridQuiensoy{ 
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 70vh 70vh;
-    grid-template-areas:"banner banner banner" 
-                        "fotoquiensoy texto texto";
-
-                        .textoQuienSoy{
-                            padding: 20px;
-                        }
-}
-
-/*CLASES*/
-
-#gridClases{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:70vh 70vh ;
-    grid-gap: 2vh;
-    grid-template-areas: "banner banner banner"
-                         "nivel1 nivel2 nivel3";
-
-                        .nivel1{
-                            margin: 0 0 15vh 2vh;
-                        }
-
-                        .nivel2{
-                            margin: 0 0 8vh 2vh;
-                        }
-
-                        .nivel3{
-                            margin: 0 0 5vh 2vh;
-                        }
-
-}
-
-
-/*INSTRUMENTOS*/
-
-#gridInstrumentos{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:70vh 55vh 55vh;
-    grid-template-areas: "banner banner banner"
-                         "carta1 carta2 carta3"
-                         "carta4 carta5 carta6";
-
-                        .carta1{
-                            margin: 7vh 0 7vh 7vh;
-                        }
-
-                        .carta2{
-                            margin: 7vh 0 7vh 7vh;
-                        }
-
-                        .carta3{
-                            margin: 7vh 0 7vh 7vh;
-                        }
-
-                        .carta4{
-                            margin: 7vh 0 7vh 7vh;;
-                        }
-
-                        .carta5{
-                            margin: 7vh 0 7vh 7vh;
-                        }
-
-                        .carta6{
-                            margin: 7vh 0 7vh 7vh;
-                        }
-}
-
-/*CONTACTO*/
-
-#gridContacto {
-    grid-template-columns: 50fr 50fr ;
-    grid-template-rows:70vh 80vh;
-    grid-template-areas: "banner banner "
-                         "mapa formulario";
-}    
-
-
-#whatsapp{
-    right: 30px;
-    bottom: 150px;
-    height: 50px;
-    width: 50px;
-}
-
-/*FUENTES*/
-
-h1{
-    font-size: 50px;
-}
-
-.texto{
-    font-size: 18px; 
-}
-
-
-
-/*FOOTER*/
-footer {
-    height: 140px;
-    margin: 0px;
-
-    #div1footer{
-        margin-left: 30px;
-
-        .afooter{
-            height: 40px;
-            width: 40px;
-            margin-left: 10px;
-        }
-    }
-
-    #div2footer{
-        margin-right: 30px;
-        font-size: 15px
-    }
-} 
-
-}
-
-/*TABLETS*/
-@media screen and (min-width: 600px) and (max-width: 768px) {
-
-/*HEADER + NAV*/
-header{
-    position:relative;
-    flex-direction: column;
-    justify-items: center;
-    padding: 1rem;
-
-    .navbar{
-        width: 100%;
-
-        img{
-            height: 5vh;
-            justify-content: center;
-            margin: 0.1vh 0;
-        }
-
-        ul{
-            flex-direction: column;
-            justify-self: center;
-            height: 12vh;
-            line-height: 1em;
-            
-            .linknav{
-                padding:0.5vh 0.5vh;
-                font-size: 1em;
-    
-                &:hover{
-                    border:0.1vh solid #A6483F;
-                }
-            }
-        }
-    }
-}
-
-
-
-
-/*MAIN*/
-main{
-    padding-top: 0;
-}
-
-/*INDEX*/
-
-#gridIndex{
-    grid-template-columns: 100%;
-    grid-template-rows:30vh 20vh 20vh 20vh 20vh 10vh 50vh;
-    grid-template-areas: "banner"
-                         "texto"
-                         "profesor"
-                         "clases"
-                         "didactica"
-                         "botonClases"
-                         "galeriaI";
-
-                         .textoIndex{
-                            padding: 50px;
-                        }
-}
-
-
-
-/*QUIENSOY*/
-
-
-#gridQuiensoy{ 
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 30vh 60vh;
-    grid-template-areas:"banner banner banner" 
-                        "fotoquiensoy texto texto";
-}
-
-.textoQuienSoy{
-    padding: 20px;
-}
-
-/*CLASES*/
-
-#gridClases{
-    grid-template-columns: 1fr;
-    grid-template-rows:30vh 45vh 55vh 60vh;
-    grid-template-areas: "banner"
-                         "nivel1"
-                         "nivel2"
-                         "nivel3";
-
-                         .nivel1, .nivel2, .nivel3{
-                             margin: 0 0 2vh 20vw;
-                         }
-}
-
-/*INSTRUMENTOS*/
-
-#gridInstrumentos{
-    grid-template-columns: 50fr 50fr ;
-    grid-template-rows:30vh 45vh 45vh 45vh;
-    grid-template-areas: "banner banner "
-                         "carta1 carta2"
-                         "carta3 carta4"
-                         "carta5 carta6";
-
-                        .carta1, .carta2, .carta3, .carta4, .carta5, .carta6{
-                            margin: 2vh;
-                        }
-}
-
-/*CONTACTO*/
-
-#gridContacto {
-    grid-template-columns: 1fr;
-    grid-template-rows:30vh 80vh 40vh;
-    grid-template-areas: "banner"
-                         "formulario"
-                         "mapa";
-}    
-
-#whatsapp{
-    right: 30px;
-    bottom: 150px;
-    height: 50px;
-    width: 50px;
-}
-
-/*FUENTES*/
-
-h1{
-    font-size: 30px;
-}
-
-.texto{
-    font-size: 15px; 
-}
-
-
-
-/*FOOTER*/
-footer {
-    height: 180px;
-    margin: 0px;
-
-    #div1footer{
-        margin-top: 30px;
-
-        .afooter{
-            height: 40px;
-            width: 40px;
-            margin-left: 10px;
-        }
-    }
-
-    #div2footer{
-        margin-right: 30px;
-        font-size: 15px
-    }
-} 
-
-}
-
-/*MOBILE*/
-@media screen and (min-width: 0px) and (max-width: 599px) {
-    /*HEADER + NAV*/
-header{
-    position:relative;
-    flex-direction: column;
-    padding: 1rem;
-
-    .navbar{
-        width: 100%;
-
-        img{
-            height: 5vh;
-            justify-content: center;
-        }
-
-        ul{
-            flex-direction: column;
-            margin-top: 1vh;
-            justify-content: center;
-            height: 12vh;
-
-            .linknav{
-                font-size: 1em;
-                padding: 0 0.3vh;
-
-                &:hover{
-                    border:0.1vh solid #A6483F;
-                }
-            }
-            
-        }
-        
-    }
-
-}
-
-/*MAIN*/
-main{
-    padding-top: 0;
-}
-
-/*INDEX*/
-
-#gridIndex{
-    grid-template-columns: 100%;
-    grid-template-rows:20vh 20vh 20vh 20vh 20vh 10vh 50vh;
-    grid-template-areas: "banner"
-                         "texto"
-                         "profesor"
-                         "clases"
-                         "didactica"
-                         "botonClases"
-                         "galeriaI";
-
-                         .textoIndex{
-                            padding: 30px; 
-                        }
-}
-
-
-
-/*QUIENSOY*/
-
-#gridQuiensoy{ 
-    grid-template-columns: 100%;
-    grid-template-rows: 20vh 40vh 20vh;
-    grid-template-areas:"banner"
-                        "fotoquiensoy" 
-                        "texto";
-}
-
-.textoQuienSoy{
-    padding: 10px; 
-}
-
-.galeriaQuienSoy{
-    width: 40%;
-}
-
-/*CLASES*/
-
-#gridClases{
-    grid-template-columns: 100%;
-    grid-template-rows:20vh 45vh 55vh 60vh;
-    grid-template-areas: "banner"
-                         "nivel1"
-                         "nivel2"
-                         "nivel3";
-
-                         .nivel1, .nivel2, .nivel3{
-                             margin: 0 0 2vh 20vw;
-                         }
-}
-
-/*INSTRUMENTOS*/
-
-#gridInstrumentos{
-    grid-template-columns: 100%;
-    grid-template-rows:20vh 45vh 45vh 45vh 45vh 45vh 45vh;
-    grid-template-areas: "banner"
-                         "carta1" 
-                         "carta2"
-                         "carta3"
-                         "carta4"
-                         "carta5"
-                         "carta6";    
-
-                        .carta1, .carta2, .carta3, .carta4, .carta5, .carta6{
-                            margin: 2vh 10vw;
-                        }
-}
-
-/*CONTACTO*/
-
-#gridContacto {
-    grid-template-columns: 1fr ;
-    grid-template-rows:20vh 80vh 40vh;
-    grid-template-areas: "banner"
-                         "formulario" 
-                         "mapa";
-}    
-
-#whatsapp{
-    right: 30px;
-    bottom: 150px;
-    height: 50px;
-    width: 50px;
-}
-
-/*FUENTES*/
-
-h1{
-    font-size: 30px;
-}
-
-.texto{
-    font-size: 13px; 
-}
-
-
-
-/*FOOTER*/
-footer {
-    height: 180px;
-    margin: 0px;
-
-    #div1footer{
-        margin-top: 30px;
-
-        .afooter{
-            height: 40px;
-            width: 40px;
-            margin-left: 10px;
-        }
-    }
-
-    #div2footer{
-        margin-right: 30px;
-        font-size: 15px
-    }
-} 
-
-}
+.h3 { font-size: 1.35rem; font-weight: 600; }

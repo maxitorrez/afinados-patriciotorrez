@@ -1,6 +1,19 @@
-Optimización y SEO
-*meta keywords
-*meta description
-*se optimizó logo e íconos vectoriales a svg
-*se comprimió imágenes png y svg
-*se definió títulos
+Optimización, SEO y accesibilidad
+
+Rendimiento
+* Imágenes convertidas a WebP y redimensionadas (IMG pasó de 7,8 MB a 0,7 MB).
+* Se quitaron Bootstrap, AOS, Animate.css y WOW (unos 300 KB entre CSS y JS); se reemplazaron por CSS propio y un JS mínimo (JS/main.js).
+* Imágenes con width/height (sin saltos de layout) y loading="lazy" debajo del pliegue.
+* Fuentes de Google con preconnect y display=swap.
+
+SEO
+* lang="es-AR", títulos y meta descriptions únicos por página.
+* Open Graph para compartir en redes; datos estructurados schema.org (MusicSchool) en el inicio.
+* Un solo h1 por página y jerarquía de títulos correcta.
+
+Accesibilidad
+* Link "Saltar al contenido", foco visible y navegación con aria-current.
+* Formulario con labels asociados, tipos de input correctos y campos requeridos.
+* Textos alternativos revisados (imágenes decorativas con alt vacío).
+* Respeta prefers-reduced-motion.
+* Botón de WhatsApp con enlace directo (wa.me) y etiqueta accesible.
